@@ -14,7 +14,7 @@
 		et.item_id,
 		et.requires_grade_p, et.description, et.grade_item_id,
 		coalesce(round(cr.content_length/1024,0),0) as content_length,
-		et.data as task_data,
+		cr.filename as task_data,
 		crmt.label as pretty_mime_type,
 		cr.title as task_title,
    		et.task_id as revision_id
@@ -83,28 +83,6 @@
               where et3.task_id = :task_id 
 
 --		select evaluation__party_id(:user_id,:task_id)
-	
-      </querytext>
-</fullquery>
-
-<fullquery name="grade_names">      
-      <querytext>
-
-		select eg.grade_name, eg.grade_plural_name 
-		from evaluation_grades eg, cr_items cri
-		where eg.grade_item_id = :grade_item_id 
-		and cri.live_revision = eg.grade_id
-	
-      </querytext>
-</fullquery>
-
-<fullquery name="solution_info">      
-      <querytext>
-
-	    select ets.solution_id
-	    from evaluation_tasks_sols ets, cr_items cri
-	    where ets.task_item_id = :task_item_id
-	    and cri.live_revision = ets.solution_id
 	
       </querytext>
 </fullquery>
