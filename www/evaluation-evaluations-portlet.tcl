@@ -34,14 +34,14 @@ db_multirow grades get_grades { *SQL* } {
 }
 
 if { [string eq $one_instance_p 1] && [string eq $admin_p 0] } {
-    set total_class_grade [format %.2f [db_string get_total_grade "select evaluation__class_total_grade(:user_id,[lindex $list_of_package_ids 0])"]]
+    set total_class_grade [format %.2f [lc_numeric [db_string get_total_grade { *SQL* }]]]
 }
 
 
 set notification_chunk [notification::display::request_widget \
 							-type one_evaluation_notif \
 							-object_id $package_id \
-							-pretty_name "Evaluations" \
+							-pretty_name "[_ evaluation-portlet.Evaluations_]" \
 							-url [ad_conn url] \
 						   ]
 

@@ -16,7 +16,7 @@ set list_of_package_ids $config(package_id)
 
 if {[llength $list_of_package_ids] > 1} {
     # We have a problem!
-    return -code error "There should be only one instance of weblogger for admin purposes"
+    return -code error "[_ evaluation-portlet.lt_There_should_be_only_]"
 }        
 
 set package_id [lindex $list_of_package_ids 0]        

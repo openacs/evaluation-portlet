@@ -3,7 +3,7 @@
     <ul>
     <li>@notification_chunk;noquote@<br /></li>
     <if @grades:rowcount@ eq 0>
-      <li>There are no tasks for this package.</li>
+      <li>#evaluation-portlet.lt_There_are_no_tasks_fo#</li>
     </if><else>
        <multiple name="grades">
 	 <li><strong>@grades.grade_plural_name@</strong> <br />
@@ -16,4 +16,5 @@
   <else>
   &nbsp;
   </else>
+
 

@@ -28,7 +28,7 @@ ad_proc -private evaluation_assignments_portlet::after_install {} {
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_assignments_portlet" \
-                   -description "Evaluation Assignments Portlet"]
+                   -description "[_ evaluation-portlet.lt_Evaluation_Assignment]"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \
@@ -108,7 +108,7 @@ ad_proc -private evaluation_evaluations_portlet::after_install {} {
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_evaluations_portlet" \
-                   -description "Evaluation Evaluations Portlet"]
+                   -description "[_ evaluation-portlet.lt_Evaluation_Evaluation]"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \
@@ -185,11 +185,10 @@ ad_proc -private evaluation_admin_portlet::after_install {} {
     Create the datasources needed by the evaluation portlet.
 } {
     
-    ns_log Notice "SE meteeeeeeeeeeeeeee\n"
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_admin_portlet" \
-                   -description "Evaluation Admin Portlet"]
+                   -description "[_ evaluation-portlet.lt_Evaluation_Admin_Port]"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \

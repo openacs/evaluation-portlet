@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="evaluation-portlet" package_version="0.1d" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Add_grade_name_">Add %grade_name% </msg>
+  <msg key="Addedit_answer_">Add/edit answer </msg>
+  <msg key="Addedit_solution_">Add/edit solution </msg>
+  <msg key="Assignments_">Assignments </msg>
+  <msg key="Audit_Info_">Audit Info. </msg>
+  <msg key="Audit_info_">Audit info </msg>
+  <msg key="Comments_">Comments </msg>
+  <msg key="Delete_task_">Delete task </msg>
+  <msg key="Due_date_">Due date </msg>
+  <msg key="Edit_task_">Edit task </msg>
+  <msg key="Evaluations_">Evaluations </msg>
+  <msg key="Grade_over_100_">Grade over 100 </msg>
+  <msg key="Groups_Admin_">Groups Admin. </msg>
+  <msg key="lt_Admin_my_Assignment_T">Admin my Assignment Types</msg>
+  <msg key="lt_Administer_Evaluation">Administer Evaluation</msg>
+  <msg key="lt_Edit_grades_distribut">Edit grades distribution of %grade_plural_name% </msg>
+  <msg key="lt_Evaluation_Admin_Port">Evaluation Admin Portlet </msg>
+  <msg key="lt_Evaluation_Administra">Evaluation Administration </msg>
+  <msg key="lt_Evaluation_Assignment">Evaluation Assignments Portlet </msg>
+  <msg key="lt_Evaluation_Evaluation">Evaluation Evaluations Portlet </msg>
+  <msg key="lt_Groups_administration">Groups administration </msg>
+  <msg key="lt_smallTotal_points_in_">&lt;small&gt;Total points in this category: %total_grade%/%max_grade%&lt;br /&gt;
+                     This grade category represents the %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
+  <msg key="lt_smallWeight_used_in_g">&lt;small&gt;Weight used in %grade_plural_name%: %category_weight%% (over 100% of %grade_plural_name%) &lt;br /&gt;
+                      %grade_plural_name% represents %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
+  <msg key="lt_submit_answer_style_f">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; </msg>
+  <msg key="lt_submit_answer_style_f_1">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; again </msg>
+  <msg key="lt_There_are_no_tasks_fo">There are no tasks for this package.</msg>
+  <msg key="lt_There_are_no_tasks_to">There are no tasks to evaluate for this package.</msg>
+  <msg key="lt_There_should_be_only_">There should be only one instance of evaluation for admin purposes </msg>
+  <msg key="lt_View_evaluation_comme">View evaluation comments </msg>
+  <msg key="lt_Your_total_grade_in_t">Your total grade in this class is:</msg>
+  <msg key="Name_">Name </msg>
+  <msg key="Net_Value_">Net Value </msg>
+  <msg key="No_group_for_task_">No group for task </msg>
+  <msg key="Not_available_">Not available </msg>
+  <msg key="Not_evaluated_">Not evaluated </msg>
+  <msg key="submit_answer_">submit answer </msg>
+  <msg key="submit_answer_again_">submit answer again </msg>
+  <msg key="task_name_No_data_">%task_name% (No data) </msg>
+  <msg key="task_name_URL_">%task_name% (URL) </msg>
+  <msg key="Upload_Solution_">Upload Solution </msg>
+  <msg key="View_comments_">View comments </msg>
+  <msg key="View_my_answer_">View my answer </msg>
+  <msg key="View_task_">View task </msg>
+  <msg key="ViewEdit_Solution_">View/Edit Solution </msg>
+  <msg key="Weight_">Weight </msg>
+</message_catalog>
