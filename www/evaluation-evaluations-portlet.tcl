@@ -9,6 +9,7 @@ ad_page_contract {
 } {
     item_id:integer,notnull,optional,multiple
     {evaluations_orderby ""}
+    page_num:optional
 } -properties {
 
 }

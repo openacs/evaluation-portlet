@@ -38,6 +38,7 @@
   <msg key="lt_Your_total_grade_in_t">Your total grade in this class is:</msg>
   <msg key="Name_">Name </msg>
   <msg key="Net_Value_">Net Value </msg>
+  <msg key="No_assignments_">No assignments </msg>
   <msg key="No_group_for_task_">No group for task </msg>
   <msg key="Not_available_">Not available </msg>
   <msg key="Not_evaluated_">Not evaluated </msg>

@@ -11,7 +11,7 @@
     </if><else>
     <multiple name="grades">
        <li><strong>@grades.grade_plural_name@</strong> <br />
-       <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@>
+       <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
        </li>
     </multiple>
     <if @admin_p@ eq "0" and @one_instance_p@ eq "1">

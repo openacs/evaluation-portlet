@@ -82,7 +82,8 @@ template::list::create \
     -actions $actions \
     -key task_id \
     -pass_properties { return_url mode base_url grade_id } \
-    -filters { grade_id {} } \
+    -filters { grade_id {} page_num {} } \
+    -no_data "[_ evaluation-portlet.No_assignments_]" \
     -orderby_name assignments_orderby \
     -elements $elements \
     -orderby { default_value task_name }
