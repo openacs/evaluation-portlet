@@ -108,7 +108,6 @@ if { $admin_p } {
 	    set task_weight "[_ evaluation-portlet.Not_available_]"
 	}
 	
-	ns_log notice "el answer data es ($answer_data ([db_string content_length "select content_length from cr_revisions where revision_id = :answer_id" -default nada])) y el title es -$answer_title-! \n"
 	# working with answer stuff (if it has a file/url attached)
 	if { [empty_string_p $answer_data] } {
 	    set answer_url ""
