@@ -21,8 +21,8 @@ set elements [list task_name \
 		       orderby_desc {task_name desc}] \
 		  due_date_pretty \
 		  [list label "[_ evaluation-portlet.Due_date_]" \
-		       orderby_asc {due_date_pretty asc} \
-		       orderby_desc {due_date_pretty desc}] \
+		       orderby_asc {due_date_ansi asc} \
+		       orderby_desc {due_date_ansi desc}] \
 		 ]
 
 if { $admin_p } { 

@@ -6,21 +6,20 @@
     <pretty-plural>Evaluations Portlets</pretty-plural>
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
-    <auto-mount>evaluation-portlet</auto-mount>
-
-    <version name="0.1d" url="http://openacs.org/repository/download/apm/evaluation-portlet-0.1d.apm">
+    
+    <version name="0.1d" url="http://openacs.org/repository/download/apm/evaluation-portlet-0.2d.apm">
         <owner url="mailto:jopez@galileo.edu">Jose Pablo Escobedo Del Cid</owner>
-        <release-date>2004-05-19</release-date>
+        <release-date>2004-06-12</release-date>
 
         <provides url="evaluation-portlet" version="0.1d"/>
         <requires url="evaluation" version="0.1d"/>
 
         <callbacks>
-            <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
             <callback type="after-install"  proc="evaluation_portlet::after_install"/>
+            <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
         </callbacks>
         <parameters>
-        <!-- No version parameters -->
+            <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="evaluation_assignments_portlet_force_region"  default="2" description="number the portal region to put the assignments portlet into"/>
         </parameters>
 
     </version>

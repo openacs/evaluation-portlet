@@ -24,6 +24,8 @@
   <msg key="lt_Groups_administration">Groups administration </msg>
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Total points in this category: %total_grade%/%max_grade%&lt;br /&gt;
                      This grade category represents the %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
+  <msg key="lt_smallTotal_points_in__1">&lt;small&gt;Total points in this category: ${total_grade}/${max_grade} &lt;br /&gt;
+    $grade_plural_name represents the ${grade_weight}% of the 100% of the class&lt;/small&gt; </msg>
   <msg key="lt_smallWeight_used_in_g">&lt;small&gt;Weight used in %grade_plural_name%: %category_weight%% (over 100% of %grade_plural_name%) &lt;br /&gt;
                       %grade_plural_name% represents %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
   <msg key="lt_submit_answer_style_f">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; </msg>
