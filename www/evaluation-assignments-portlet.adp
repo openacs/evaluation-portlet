@@ -8,6 +8,7 @@
        <multiple name="grades">
 	 <li><strong>@grades.grade_plural_name@</strong> <br />
 	 <include src="../lib/tasks-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ assignments_orderby=@assignments_orderby@ page_num=@page_num@>
+         <br /><br />
 	 </li>
        </multiple>
     </else>

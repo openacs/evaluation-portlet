@@ -9,10 +9,9 @@
 		select eg.grade_plural_name,
 		eg.grade_id,
 		eg.grade_item_id
-   	 	from evaluation_gradesx eg, acs_objects ao
-		where exists (select 1 from cr_items
-	            where live_revision = eg.grade_id) 
-	          and eg.item_id = ao.object_id	
+   	 	from evaluation_grades eg, acs_objects ao, cr_items cri
+		where cri.live_revision = eg.grade_id
+	          and eg.grade_item_id = ao.object_id	
    		  and ao.context_id in  ([join $list_of_package_ids ,])
 		order by grade_plural_name desc
 	

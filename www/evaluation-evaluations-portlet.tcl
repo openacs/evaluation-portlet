@@ -35,7 +35,8 @@ db_multirow grades get_grades { *SQL* } {
 }
 
 if { [string eq $one_instance_p 1] && [string eq $admin_p 0] } {
-    set total_class_grade [format %.2f [lc_numeric [db_string get_total_grade { *SQL* }]]]
+    set total_class_grade [lc_numeric [db_string get_total_grade { *SQL* }]]
+    set max_possible_grade [lc_numeric [db_string max_possible_grade { *SQL* }]]
 }
 
 
