@@ -8,7 +8,7 @@ set package_id [ad_conn package_id]
 set user_id [ad_verify_and_get_user_id]
 set admin_p [permission::permission_p -party_id $user_id -object_id $package_id -privilege admin]
 
-set base_url [ad_conn package_url]
+set base_url "[ad_conn package_url][evaluation::package_key]/"
 
 db_1row get_grade_info { *SQL* }
 
@@ -26,7 +26,7 @@ if { $admin_p } {
 			 orderby_asc {task_weight asc} \
 			 orderby_desc {task_weight desc}] 
 	set multirow_name grade_tasks_admin
-	set actions [list "[_ evaluation-portlet.lt_Edit_grades_distribut]" [export_vars -base "${base_url}evaluation/admin/grades/distribution-edit" { grade_id }]]
+	set actions [list "[_ evaluation-portlet.lt_Edit_grades_distribut]" [export_vars -base "${base_url}admin/grades/distribution-edit" { grade_id }]]
 } else { 
 	#student
 	lappend elements grade \
@@ -75,7 +75,7 @@ if { [string equal $evaluations_orderby ""] } {
 if { $admin_p } { 
 	#admin
     db_multirow -extend { task_url } grade_tasks_admin get_tasks_admin { *SQL* } {
-	set task_url [export_vars -base "${base_url}evaluation/admin/evaluations/student-list" { task_id grade_id }]
+	set task_url [export_vars -base "${base_url}admin/evaluations/student-list" { task_id grade_id }]
 	set category_weight [expr $category_weight + $task_weight]
 	set task_weight [format %.2f [lc_numeric $task_weight]]
     }
@@ -107,11 +107,12 @@ if { $admin_p } {
 	    set task_weight "[_ evaluation-portlet.Not_available_]"
 	}
 	
+	ns_log notice "el answer data es ($answer_data ([db_string content_length "select content_length from cr_revisions where revision_id = :answer_id" -default nada])) y el title es -$answer_title-! \n"
 	# working with answer stuff (if it has a file/url attached)
 	if { [empty_string_p $answer_data] } {
 	    set answer_url ""
 	    set answer ""
-	} elseif { [empty_string_p [db_string content_length "select content_length from cr_revisions where revision_id = :answer_id"]] } {
+	} elseif { [string eq $answer_title "link"] } {
 	    # there is a bug in the template::list, if the url does not has a http://, ftp://, the url is not absolute,
 	    # so we have to deal with this case
 	    array set community_info [site_node::get -url "[dotlrn_community::get_community_url [dotlrn_community::get_community_id]][evaluation::package_key]"]
@@ -122,7 +123,7 @@ if { $admin_p } {
 	    set answer "[_ evaluation-portlet.View_my_answer_]"
 	} else {
 	    # we assume it's a file
-	    set answer_url "[export_vars -base "${base_url}evaluation/view/$answer_title" { {revision_id $answer_id} }]"
+	    set answer_url "[export_vars -base "${base_url}view/$answer_title" { {revision_id $answer_id} }]"
 	    set answer "[_ evaluation-portlet.View_my_answer_]"
 	}
 	

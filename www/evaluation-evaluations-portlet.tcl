@@ -39,9 +39,9 @@ if { [string eq $one_instance_p 1] && [string eq $admin_p 0] } {
 
 
 set notification_chunk [notification::display::request_widget \
-							-type one_evaluation_notif \
-							-object_id $package_id \
-							-pretty_name "[_ evaluation-portlet.Evaluations_]" \
-							-url [ad_conn url] \
-						   ]
+			    -type one_evaluation_notif \
+			    -object_id $package_id \
+			    -pretty_name "[_ evaluation-portlet.Evaluations_]" \
+			    -url "[ad_conn url]?[ns_conn query]" \
+			   ]
 

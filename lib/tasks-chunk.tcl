@@ -9,10 +9,10 @@ set user_id [ad_verify_and_get_user_id]
 set admin_p [permission::permission_p -party_id $user_id -object_id $package_id -privilege admin]
 
 db_1row grade_names { *SQL* }
-set base_url [ad_conn package_url]
+set base_url "[ad_conn package_url][evaluation::package_key]/"
 
 set mode display
-set return_url "[ad_conn url]?[export_vars { grade_id }]"
+set return_url "[ad_conn url]?[ns_conn query]&[export_vars { grade_id }]"
 
 set elements [list task_name \
 		  [list label "[_ evaluation-portlet.Name_]" \
@@ -43,23 +43,23 @@ if { $admin_p } {
 		[list label "" \
 			 sub_class narrow \
 			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0">} \
-			 link_url_eval {[export_vars -base "${base_url}evaluation/admin/tasks/task-add-edit" { grade_id task_id return_url mode }]} \
+			 link_url_eval {[export_vars -base "${base_url}admin/tasks/task-add-edit" { grade_id task_id mode return_url }]} \
 			 link_html { title "[_ evaluation-portlet.View_task_]" }]
 	lappend elements edit \
 		[list label "" \
 			 sub_class narrow \
 			 display_template {<img src="/resources/acs-subsite/Edit16.gif" width="16" height="16" border="0">} \
-			 link_url_eval {[export_vars -base "${base_url}evaluation/admin/tasks/task-add-edit" { return_url item_id grade_id task_id }]} \
+			 link_url_eval {[export_vars -base "${base_url}admin/tasks/task-add-edit" { grade_id return_url item_id task_id }]} \
 			 link_html { title "[_ evaluation-portlet.Edit_task_]" }] 
 	lappend elements delete \
 		[list label "" \
 		     sub_class narrow \
 		     display_template {<img src="/resources/acs-subsite/Delete16.gif" width="16" height="16" border="0">} \
-		     link_url_eval {[export_vars -base "${base_url}evaluation/admin/tasks/task-delete" { grade_id task_id return_url }]} \
+		     link_url_eval {[export_vars -base "${base_url}admin/tasks/task-delete" { grade_id task_id return_url }]} \
 		     link_html { title "[_ evaluation-portlet.Delete_task_]" }]
 	
 	set multirow_name tasks_admin
-	set actions [list "[_ evaluation-portlet.Add_grade_name_]" [export_vars -base "${base_url}evaluation/admin/tasks/task-add-edit" { return_url grade_id }] ]
+	set actions [list "[_ evaluation-portlet.Add_grade_name_]" [export_vars -base "${base_url}admin/tasks/task-add-edit" { return_url grade_id }] ]
 } else { 
 	#student
 	lappend elements answer \
@@ -70,7 +70,7 @@ if { $admin_p } {
 		[list label "" \
 			 sub_class narrow \
 			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0">} \
-			 link_url_eval {[export_vars -base "${base_url}evaluation/task-view" { grade_id task_id return_url }]} \
+			 link_url_eval {[export_vars -base "${base_url}task-view" { grade_id task_id return_url }]} \
 			 link_html { title "[_ evaluation-portlet.View_task_]" }]
 	set multirow_name tasks
 	set actions ""
@@ -81,7 +81,7 @@ template::list::create \
     -multirow $multirow_name \
     -actions $actions \
     -key task_id \
-    -pass_properties { return_url mode base_url } \
+    -pass_properties { return_url mode base_url grade_id } \
     -filters { grade_id {} } \
     -orderby_name assignments_orderby \
     -elements $elements \
@@ -100,9 +100,9 @@ if { $admin_p } {
 	set due_date_pretty [lc_time_fmt $due_date_ansi "%q"]
 	# working with task stuff (if it has a file/url attached)
 	if { [empty_string_p $task_data] } {
-	    set task_url "[export_vars -base "${base_url}evaluation/task-view" { grade_id task_id return_url }]"
+	    set task_url "[export_vars -base "${base_url}task-view" { grade_id task_id return_url }]"
 	    set task_name "[_ evaluation-portlet.task_name_No_data_]"
-	} elseif { [empty_string_p $content_length] } {
+	} elseif { [string eq $task_title "link"] } {
 
 	    # there is a bug in the template::list, if the url does not has a http://, ftp://, the url is not absolute,
 	    # so we have to deal with this case
@@ -115,25 +115,25 @@ if { $admin_p } {
 	    
 	} else {
 	    # we assume it's a file
-	    set task_url "[export_vars -base "${base_url}evaluation/view/$task_title" { revision_id }]"
+	    set task_url "[export_vars -base "${base_url}view/$task_title" { revision_id }]"
 	    set task_name "$task_name ([format %.0f [lc_numeric [expr ($content_length/1024)]]] Kb)"
 	}
 
 	if { ![empty_string_p $solution_id] } { 
 	    set solution_mode display
-	    set solution_url "[export_vars -base "${base_url}evaluation/admin/tasks/solution-add-edit" { grade_id task_id solution_id return_url solution_mode }]"
+	    set solution_url "[export_vars -base "${base_url}admin/tasks/solution-add-edit" { grade_id task_id solution_id return_url solution_mode }]"
 	    set solution "[_ evaluation-portlet.ViewEdit_Solution_]"
 	} else {
 	    set solution_mode edit
-	    set solution_url "[export_vars -base "${base_url}evaluation/admin/tasks/solution-add-edit" { grade_id task_id return_url solution_mode }]"
+	    set solution_url "[export_vars -base "${base_url}admin/tasks/solution-add-edit" { grade_id task_id return_url solution_mode }]"
 	    set solution "[_ evaluation-portlet.Upload_Solution_]"
 	}
 
-	set audit_info_url "[export_vars -base "${base_url}evaluation/admin/evaluations/audit-info" { grade_id task_id }]"
+	set audit_info_url "[export_vars -base "${base_url}admin/evaluations/audit-info" { grade_id task_id }]"
 	set audit_info "[_ evaluation-portlet.Audit_Info_]"
 
 	if { ![string eq $number_of_members 1] } {
-	    set groups_admin_url "[export_vars -base "${base_url}evaluation/admin/groups/one-task" { grade_id task_id }]"
+	    set groups_admin_url "[export_vars -base "${base_url}admin/groups/one-task" { grade_id task_id }]"
 	    set groups_admin "[_ evaluation-portlet.Groups_Admin_]"		
 	}
 
@@ -144,10 +144,10 @@ if { $admin_p } {
 	set answer_mode display
 	set due_date_pretty [lc_time_fmt $due_date_ansi "%q"]
 	# working with task stuff (if it has a file/url attached)
-	if { [empty_string_p $task_data] } {
-	    set task_url "[export_vars -base "${base_url}evaluation/task-view" { grade_id task_id return_url }]"
+	if { [string eq $task_title "link"] } {
+	    set task_url "[export_vars -base "${base_url}task-view" { grade_id task_id return_url }]"
 	    set task_name "[_ evaluation-portlet.task_name_No_data_]"
-	} elseif { [empty_string_p $content_length] } {
+	} elseif { [string eq $task_title "link"] } {
 
 	    # there is a bug in the template::list, if the url does not has a http://, ftp://, the url is not absolute,
 	    # so we have to deal with this case
@@ -160,7 +160,7 @@ if { $admin_p } {
 
 	} else {
 	    # we assume it's a file
-	    set task_url "[export_vars -base "${base_url}evaluation/view/$task_title" { revision_id }]"
+	    set task_url "[export_vars -base "${base_url}view/$task_title" { revision_id }]"
 	    set task_name "$task_name ([format %.0f [lc_numeric [expr ($content_length/1024)]]] Kb)"
 	}
 
@@ -169,21 +169,21 @@ if { $admin_p } {
 		if { [empty_string_p $answer_id] } {
 		    set answer "[_ evaluation-portlet.submit_answer_]"
 		    set answer_mode edit
-		    set answer_url "[export_vars -base "${base_url}evaluation/answer-add-edit" { grade_id task_id return_url answer_mode }]"
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
 		} else { 
 		    set answer "[_ evaluation-portlet.submit_answer_again_]"
 		    set answer_mode display
-		    set answer_url "[export_vars -base "${base_url}evaluation/answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
 		}
 	    } elseif { [string eq $turn_in_late_p "t"] } {
 		if { [empty_string_p $answer_id] } {
 		    set answer "[_ evaluation-portlet.lt_submit_answer_style_f]"
 		    set answer_mode edit
-		    set answer_url "[export_vars -base "${base_url}evaluation/answer-add-edit" { grade_id task_id return_url answer_mode }]"
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
 		} else {
 		    set answer "[_ evaluation-portlet.lt_submit_answer_style_f_1]"
 		    set answer_mode display
-		    set answer_url "[export_vars -base "${base_url}evaluation/admin/tasks/solution-add-edit" { grade_id task_id answer_id return_url solution_mode }]"
+		    set answer_url "[export_vars -base "${base_url}admin/tasks/solution-add-edit" { grade_id task_id answer_id return_url solution_mode }]"
 		}
 	    }
 	    if { $number_of_members > 1 && [string eq [db_string get_group_id { *SQL* }] 0] } {
