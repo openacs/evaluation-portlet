@@ -64,7 +64,7 @@
 <fullquery name="compare_due_date">      
       <querytext>
 
-	select 1 from dual where :due_date > now()
+	select 1 from dual where :due_date > sysdate
 	
       </querytext>
 </fullquery>
