@@ -14,10 +14,10 @@
 		et.requires_grade_p, et.description, et.grade_id,
 		cr.content_length,
 		et.data as task_data,
-		et.title as task_title,
+		cr.title as task_title,
    		et.task_id as revision_id,
 		ets.solution_id as solution_id
-	from cr_revisions cr, 
+	from cr_revisions cr,
 		 evaluation_tasksi et left outer join evaluation_tasks_solsi ets on (ets.task_id = et.task_id and content_revision__is_live(ets.solution_id) = true)
 	where cr.revision_id = et.revision_id
 	  and grade_id = :grade_id	
@@ -37,7 +37,7 @@
 		et.item_id,
 		et.due_date,
 		et.requires_grade_p, et.description, et.grade_id,
-		et.title as task_title,
+		cr.title as task_title,
 		et.data as task_data,
 	   	et.task_id as revision_id,
 		cr.content_length,

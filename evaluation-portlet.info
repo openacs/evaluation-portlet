@@ -15,8 +15,8 @@
         <requires url="evaluation" version="0.1d"/>
 
         <callbacks>
-            <callback type="after-install"  proc="evaluation_portlet::after_install"/>
             <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
+            <callback type="after-install"  proc="evaluation_portlet::after_install"/>
         </callbacks>
         <parameters>
         <!-- No version parameters -->
