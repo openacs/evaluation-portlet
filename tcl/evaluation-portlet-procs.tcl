@@ -49,6 +49,8 @@ ad_proc -public evaluation_assignments_portlet::add_self_to_page {
     {-portal_id:required}
     {-package_id:required}
     {-param_action:required}
+    {-force_region ""}
+    {-page_name "" }
 } {
     Adds a evaluation PE to the given portal.
     
@@ -61,9 +63,8 @@ ad_proc -public evaluation_assignments_portlet::add_self_to_page {
                 -portal_id $portal_id \
                 -portlet_name [get_my_name] \
                 -value $package_id \
-                -force_region [parameter::get_from_package_key \
-                                   -parameter "evaluation_assignments_portlet_force_region" \
-                                   -package_key [my_package_key]] \
+                -force_region $force_region \
+		-page_name $page_name \
                 -pretty_name [get_pretty_name] \
                 -param_action $param_action
            ]
@@ -135,6 +136,8 @@ ad_proc -public evaluation_evaluations_portlet::add_self_to_page {
     {-portal_id:required}
     {-package_id:required}
     {-param_action:required}
+    {-force_region ""}
+    {-page_name "" }
 } {
     Adds a evaluation PE to the given portal.
     
@@ -147,9 +150,8 @@ ad_proc -public evaluation_evaluations_portlet::add_self_to_page {
                 -portal_id $portal_id \
                 -portlet_name [get_my_name] \
                 -value $package_id \
-                -force_region [parameter::get_from_package_key \
-                                   -parameter "evaluation_evaluations_portlet_force_region" \
-                                   -package_key [my_package_key]] \
+                -force_region $force_region \
+		-page_name $page_name \
                 -pretty_name [get_pretty_name] \
                 -param_action $param_action
            ]

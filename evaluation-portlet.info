@@ -19,7 +19,7 @@
             <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
         </callbacks>
         <parameters>
-            <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="evaluation_assignments_portlet_force_region"  default="2" description="number the portal region to put the assignments portlet into"/>
+        <!-- No version parameters -->
         </parameters>
 
     </version>

@@ -102,9 +102,17 @@ if { $admin_p } {
 	if { [empty_string_p $task_data] } {
 	    set task_url "[export_vars -base "${base_url}evaluation/task-view" { grade_id task_id return_url }]"
 	    set task_name "[_ evaluation-portlet.task_name_No_data_]"
-	} elseif { [regexp "http://" $task_data] } {
+	} elseif { [empty_string_p $content_length] } {
+
+	    # there is a bug in the template::list, if the url does not has a http://, ftp://, the url is not absolute,
+	    # so we have to deal with this case
+	    array set community_info [site_node::get -url "[dotlrn_community::get_community_url [dotlrn_community::get_community_id]][evaluation::package_key]"]
+	    if { ![regexp ([join [split [parameter::get -parameter urlProtocols -package_id $community_info(package_id)] ","] "|"]) "$task_data"] } {
+		set task_data "http://$task_data"
+	    } 
 	    set task_url "[export_vars -base "$task_data" { }]"
 	    set task_name "[_ evaluation-portlet.task_name_URL_]"
+	    
 	} else {
 	    # we assume it's a file
 	    set task_url "[export_vars -base "${base_url}evaluation/view/$task_title" { revision_id }]"
@@ -139,9 +147,17 @@ if { $admin_p } {
 	if { [empty_string_p $task_data] } {
 	    set task_url "[export_vars -base "${base_url}evaluation/task-view" { grade_id task_id return_url }]"
 	    set task_name "[_ evaluation-portlet.task_name_No_data_]"
-	} elseif { [regexp "http://" $task_data] } {
+	} elseif { [empty_string_p $content_length] } {
+
+	    # there is a bug in the template::list, if the url does not has a http://, ftp://, the url is not absolute,
+	    # so we have to deal with this case
+	    array set community_info [site_node::get -url "[dotlrn_community::get_community_url [dotlrn_community::get_community_id]][evaluation::package_key]"]
+	    if { ![regexp ([join [split [parameter::get -parameter urlProtocols -package_id $community_info(package_id)] ","] "|"]) "$task_data"] } {
+		set task_data "http://$task_data"
+	    } 
 	    set task_url "[export_vars -base "$task_data" { }]"
 	    set task_name "[_ evaluation-portlet.task_name_URL_]"
+
 	} else {
 	    # we assume it's a file
 	    set task_url "[export_vars -base "${base_url}evaluation/view/$task_title" { revision_id }]"
