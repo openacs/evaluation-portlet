@@ -40,7 +40,7 @@
 		cr.title as task_title,
 		et.data as task_data,
 	   	et.task_id as revision_id,
-		cr.content_length,
+		coalesce(cr.content_length,0) as content_length,
 		ea.answer_id as answer_id
 	from cr_revisions cr, 
 		 evaluation_tasksi et left outer join evaluation_answersi ea on (ea.task_item_id = et.task_item_id and content_revision__is_live(ea.answer_id) = true
