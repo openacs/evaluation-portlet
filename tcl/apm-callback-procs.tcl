@@ -200,27 +200,4 @@ ad_proc -private evaluation_admin_portlet::after_install {} {
     }
 }
 
-ad_proc -private evaluation_assignments_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc
-} {
-    unregister_implementations
-    set ds_id [portal::get_datasource_id evaluation_assignments_portlet]
-    db_exec_plsql delete_assignments_ds { *SQL* }
-}
-
-ad_proc -private evaluation_evaluations_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc
-} {
-    unregister_implementations
-    set ds_id [portal::get_datasource_id evaluation_evaluations_portlet]
-    db_exec_plsql delete_evaluations_ds { *SQL* }
-}
-
-ad_proc -private evaluation_admin_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc
-} {
-    unregister_implementations
-    set ds_id [portal::get_datasource_id evaluation_admin_portlet]
-    db_exec_plsql delete_admin_ds { *SQL* }
-}
 

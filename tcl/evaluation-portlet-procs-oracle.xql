@@ -5,25 +5,25 @@
 
 <fullquery name="evaluation_assignments_portlet::uninstall.delete_assignments_ds">      
       <querytext>
-
-	select portal_datasource.delete(:ds_id)
-    
+	begin
+		portal_datasource.del(datasource_id => :ds_id);
+    end;
       </querytext>
 </fullquery>
 
 <fullquery name="evaluation_evaluations_portlet::uninstall.delete_evaluations_ds">      
       <querytext>
-
-	select portal_datasource.delete(:ds_id)
-    
+	begin
+		portal_datasource.del(datasource_id => :ds_id);
+    end;
       </querytext>
 </fullquery>
 
 <fullquery name="evaluation_admin_portlet::uninstall.delete_admin_ds">      
       <querytext>
-
-	select portal_datasource.delete(:ds_id)
-    
+	begin
+		portal_datasource.del(datasource_id => :ds_id);
+    end;
       </querytext>
 </fullquery>
  

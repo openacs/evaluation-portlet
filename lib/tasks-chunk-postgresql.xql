@@ -14,7 +14,7 @@
 		et.item_id,
 		et.requires_grade_p, et.description, et.grade_item_id,
 		coalesce(round(cr.content_length/1024,0),0) as content_length,
-		cr.filename as task_data,
+		et.data as task_data,
 		crmt.label as pretty_mime_type,
 		cr.title as task_title,
    		et.task_id as revision_id
