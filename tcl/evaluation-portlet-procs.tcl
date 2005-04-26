@@ -33,7 +33,7 @@ ad_proc -private evaluation_assignments_portlet::my_package_key {
 
 ad_proc -public evaluation_assignments_portlet::get_pretty_name {
 } {
-    return "[_ evaluation-portlet.Assignments_]"
+    return "#evaluation-portlet.Assignments#"
 }
 
 
@@ -120,7 +120,7 @@ ad_proc -private evaluation_evaluations_portlet::my_package_key {
 
 ad_proc -public evaluation_evaluations_portlet::get_pretty_name {
 } {
-    return "[_ evaluation-portlet.Evaluations_]"
+    return "#evaluation-portlet.Evaluations#"
 }
 
 
@@ -192,7 +192,7 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
-    return "[_ evaluation-portlet.lt_Evaluation_Administra]"
+    return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
 
@@ -266,7 +266,7 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
-    return "[_ evaluation-portlet.lt_Evaluation_Administra]"
+    return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
 
