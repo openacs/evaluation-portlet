@@ -33,7 +33,7 @@ ad_proc -private evaluation_assignments_portlet::my_package_key {
 
 ad_proc -public evaluation_assignments_portlet::get_pretty_name {
 } {
-    return "#evaluation-portlet.Assignments#"
+    return "#evaluation-portlet.Assignments_#"
 }
 
 
@@ -120,7 +120,7 @@ ad_proc -private evaluation_evaluations_portlet::my_package_key {
 
 ad_proc -public evaluation_evaluations_portlet::get_pretty_name {
 } {
-    return "#evaluation-portlet.Evaluations#"
+    return "#evaluation-portlet.Evaluations_#"
 }
 
 
