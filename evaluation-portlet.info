@@ -7,16 +7,16 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
     
-    <version name="1.0" url="http://openacs.org/repository/download/apm/evaluation-portlet-1.0.apm">
+    <version name="0.1d" url="http://openacs.org/repository/download/apm/evaluation-portlet-0.2d.apm">
         <owner url="mailto:jopez@galileo.edu">Jose Pablo Escobedo Del Cid</owner>
-        <release-date>2005-04-08</release-date>
+        <release-date>2004-06-12</release-date>
 
-        <provides url="evaluation-portlet" version="1.0"/>
+        <provides url="evaluation-portlet" version="0.1d"/>
         <requires url="evaluation" version="0.1d"/>
 
         <callbacks>
-            <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
             <callback type="after-install"  proc="evaluation_portlet::after_install"/>
+            <callback type="before-uninstall"  proc="evaluation_portlet::before_uninstall"/>
         </callbacks>
         <parameters>
         <!-- No version parameters -->
