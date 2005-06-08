@@ -2,16 +2,36 @@
   <if @shaded_p@ ne "t">
    <ul>
    <if @admin_p@ eq 1>
-      <li><a href="evaluation/admin/grades/grades">#evaluation-portlet.lt_Admin_my_Assignment_T#</a><br /></li>
+   <if @simple_p@ eq 1>
+     <li class="arrow"><a href="evaluation/admin/grades/grades"><text class="blue"><b>#evaluation-portlet.lt_Admin_my_Assignment_T#</b></text></a><br>
+	<text class="blue">#evaluation-portlet.admin_help#</text></li><br>
+      <li class="arrow"><a href="evaluation/admin/grades/grades-reports"><text class="blue"><b>#evaluation-portlet.view_students_grades#</b></text></a><br>
+	<text class="blue">#evaluation-portlet.view_grades_help#</text></li><br>
+      <li class="arrow"><text class="blue"><b>Notifications</b>
    </if>
-   <li>@notification_chunk;noquote@<br /></li>
-
+  <else>
+      <li><a href="evaluation/admin/grades/grades">#evaluation-portlet.lt_Admin_my_Assignment_T#</a><br /></li>
+  </else>  
+   </if>
+  <if @simple_p@ eq 1>
+  <br>@notification_chunk;noquote@
+  <br>
+  <br>
+  
+ </if> <else>
+   <li>  @notification_chunk;noquote@</li>
+ </else>
     <if @grades:rowcount@ eq 0>
+	
        <li>#evaluation-portlet.lt_There_are_no_tasks_to#</li>
+	
     </if><else>
     <multiple name="grades">
+     <if @simple_p@ eq 0>
        <li><strong>@grades.grade_plural_name;noquote@</strong> <br />
-       <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
+     </if> 
+     
+      <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
        <br /><br />
        </li>
     </multiple>

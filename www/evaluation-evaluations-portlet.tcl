@@ -18,7 +18,8 @@ set user_id [ad_conn user_id]
 
 array set config $cf	
 set shaded_p $config(shaded_p)
-
+set evaluation_id [evaluation_evaluations_portlet::get_package_id_from_key -package_key "evaluation"]
+set simple_p  [parameter::get -parameter "SimpleVersion" -package_id $evaluation_id]
 set list_of_package_ids $config(package_id)
 set one_instance_p [ad_decode [llength $list_of_package_ids] 1 1 0]
 
