@@ -58,8 +58,8 @@
   <msg key="point_value">POINT VALUE</msg>
   <msg key="Points">&lt;center&gt;POINTS MADE&lt;/center&gt;</msg>
   <msg key="points_value">POINTS VALUE</msg>
-  <msg key="select_version">Select Portlet Version</msg>
-  <msg key="simple_version">Simple Version: Evaluations Portlet</msg>
+  <msg key="select_version">Portlet Presentation</msg>
+  <msg key="simple_version">Simple Version: Evaluations Portlet, based on perfect score feature.</msg>
   <msg key="solution">SOLUTION</msg>
   <msg key="submit_answer_">submit answer </msg>
   <msg key="submit_answer_again_">submit answer again </msg>
@@ -70,7 +70,7 @@
   <msg key="Total_Points">&lt;center&gt;TOTAL POINTS
 &lt;/center&gt;</msg>
   <msg key="Upload_Solution_">Upload Solution </msg>
-  <msg key="version_label">Choose your portlet version:</msg>
+  <msg key="version_label">Choose your portlet presentation:</msg>
   <msg key="View_comments_">View comments </msg>
   <msg key="view_grades_help">View students grades across all assignments and evaluations.</msg>
   <msg key="View_my_answer_">View my answer </msg>
