@@ -26,5 +26,16 @@
     
       </querytext>
 </fullquery>
+	
+<fullquery name="evaluation_evaluations_portlet::get_package_id_from_key.get_package_id">      
+      <querytext>
+	select dca.package_id 
+	from dotlrn_community_applets dca,apm_packages ap 
+	where community_id=:community_id 
+	and ap.package_id=dca.package_id and ap.package_key=:package_key
+    
+      </querytext>
+</fullquery>
+
  
 </queryset>

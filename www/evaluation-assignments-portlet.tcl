@@ -6,6 +6,7 @@ ad_page_contract {
     @author jopez@galileo.edu
     @creation-date May 2004
     @cvs_id $Id$
+
 } {
     item_id:integer,notnull,optional,multiple
     {assignments_orderby ""}

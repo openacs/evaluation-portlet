@@ -6,6 +6,7 @@ ad_library {
     @author jopez@galileo.edu
     @cvs_id $Id$
 
+
 }
 
 namespace eval evaluation_assignments_portlet {}
@@ -146,6 +147,7 @@ ad_proc -public evaluation_evaluations_portlet::add_self_to_page {
     
     @return element_id The new element's id
 } {
+
     return [portal::add_element_parameters \
                 -portal_id $portal_id \
                 -portlet_name [get_my_name] \
@@ -608,3 +610,15 @@ ad_proc -private evaluation_admin_portlet::unregister_implementations {} {
         -contract_name "portal_datasource" \
         -impl_name "evaluation_admin_portlet"
 }
+ad_proc -private evaluation_evaluations_portlet::get_package_id_from_key {
+    {-package_key:required}
+} {
+    Gets the package_id of the evaluation instance related to the evaluation portlet for this community
+} {
+    set community_id [dotlrn_community::get_community_id]
+    set package_id  [db_string get_package_id {} -default 0]
+    return $package_id
+}
+
+
+
