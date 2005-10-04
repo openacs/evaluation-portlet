@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <queryset>
-   <rdbms><type>postgresql</type><version>7.3</version></rdbms>
 
 <fullquery name="get_grade_info">      
       <querytext>
@@ -10,5 +9,17 @@
 	
       </querytext>
 </fullquery>
+
+<fullquery name="solution_info">      
+      <querytext>
+
+	    select ets.solution_id
+	    from evaluation_tasks_sols ets, cr_items cri
+	    where ets.task_item_id = (select task_item_id from evaluation_tasks where task_id=:task_id)
+	    and cri.live_revision = ets.solution_id
+	
+      </querytext>
+</fullquery>
+
 
 </queryset>
