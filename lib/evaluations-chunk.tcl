@@ -174,7 +174,6 @@ if { $admin_p } {
 	} else {
 	    set task_url [export_vars -base "${base_url}admin/evaluations/student-list" { grade_id task_id return_url }] 
 	}
-	ns_log notice "fer fiene coon --> $perfect_score <--- \n"
 	set category_weight [expr $category_weight + $task_weight]
 	set grade_url  [export_vars -base "${base_url}admin/evaluations/student-list" { grade_id task_id return_url }] 
 	set max_weight [format %0.2f [expr $max_weight + $task_weight]]
