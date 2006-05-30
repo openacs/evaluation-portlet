@@ -24,7 +24,6 @@
   <msg key="lt_Groups_administration">Administración de Grupos</msg>
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Total de puntos en esta categoría: %total_grade%/%max_grade%&lt;br /&gt;  Esta categoría representa el %grade_weight%% del 100% de la clase&lt;/small&gt;</msg>
   <msg key="lt_smallTotal_points_in__1">&lt;small&gt;Total de puntos en esta categoría: ${total_grade}/${max_grade}&lt;br /&gt;  Esta categoría representa el ${grade_weight}% del 100% de la clase&lt;/small&gt;</msg>
-  <msg key="lt_smallWeight_used_in_g">&lt;small&gt;La ponderación utilizada en %grade_plural_name% es de: %category_weight%% (del 100% de %grade_plural_name%) &lt;br /&gt; %grade_plural_name% representa el %grade_weight%% del 100% de la clase&lt;/small&gt;</msg>
   <msg key="lt_submit_answer_style_f">enviar respuesta &lt;style font-color:red&gt;tarde&lt;/style&gt;</msg>
   <msg key="lt_submit_answer_style_f_1">re-entregar &lt;style font-color:red&gt;tarde&lt;/style&gt;</msg>
   <msg key="lt_There_are_no_tasks_fo">No hay tareas para este paquete.</msg>

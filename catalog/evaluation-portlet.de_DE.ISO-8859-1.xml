@@ -23,8 +23,6 @@
   <msg key="lt_Evaluation_Assignment">Admin Portlet für Aufgabenzuweisungen</msg>
   <msg key="lt_Groups_administration">Gruppen administrieren</msg>
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Gesamtpunkte in dieser Kategorie: %total_grade%/%max_grade%&lt;br /&gt; Diese Bewertungskategorie macht %grade_weight%% von 100% der Gesamtklassenleistung aus&lt;/small&gt;  </msg>
-  <msg key="lt_smallTotal_points_in__1">&lt;small&gt;Gesamtpunkte in dieser Kategorie: %total_grade%/%max_grade%&lt;br /&gt; %grade_plural_name% macht %grade_weight%% der Gesamtklassenleistung von 100% aus.&lt;/small&gt;  </msg>
-  <msg key="lt_smallWeight_used_in_g">&lt;small&gt;Gewichtung innerhalb der Bewertungskategorie %grade_plural_name%: %category_weight%% &lt;br /&gt; %grade_plural_name% machen insgesamt %grade_weight%% von 100% der Kursgesamtleistung aus&lt;/small&gt;  </msg>
   <msg key="lt_submit_answer_style_f">Antwort abschicken &lt;style font-color:red&gt;late&lt;/style&gt;  </msg>
   <msg key="lt_submit_answer_style_f_1">Antwort nochmal abschicken &lt;style font-color:red&gt;late&lt;/style&gt;</msg>
   <msg key="lt_There_are_no_tasks_fo">Für diese Paket liegen keine Aufgaben vor.</msg>
