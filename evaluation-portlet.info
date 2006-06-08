@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
     
-    <version name="2.2.0b1" url="http://openacs.org/repository/download/apm/evaluation-portlet-0.2d.apm">
+    <version name="2.2.0b1" url="http://openacs.org/repository/download/apm/evaluation-portlet-2.2.0b1.apm">
         <owner url="mailto:jopez@galileo.edu">Jose Pablo Escobedo Del Cid</owner>
         <release-date>2006-06-01</release-date>
 
