@@ -33,7 +33,7 @@ ad_proc -private evaluation_assignments_portlet::my_package_key {
 
 ad_proc -public evaluation_assignments_portlet::get_pretty_name {
 } {
-    return "[_ evaluation-portlet.Assignments_]"
+    return "#evaluation-portlet.Assignments#"
 }
 
 
@@ -120,7 +120,7 @@ ad_proc -private evaluation_evaluations_portlet::my_package_key {
 
 ad_proc -public evaluation_evaluations_portlet::get_pretty_name {
 } {
-    return "[_ evaluation-portlet.Evaluations_]"
+    return "#evaluation-portlet.Evaluations_#"
 }
 
 
@@ -193,7 +193,7 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
-    return "[_ evaluation-portlet.lt_Evaluation_Administra]"
+    return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
 
@@ -267,7 +267,7 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
-    return "[_ evaluation-portlet.lt_Evaluation_Administra]"
+    return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
 
@@ -336,7 +336,7 @@ ad_proc -private evaluation_assignments_portlet::after_install {} {
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_assignments_portlet" \
-                   -description "[_ evaluation-portlet.lt_Evaluation_Assignment]"]
+                   -description "#evaluation-portlet.lt_Evaluation_Assignment#"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \
@@ -413,7 +413,7 @@ ad_proc -private evaluation_evaluations_portlet::after_install {} {
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_evaluations_portlet" \
-                   -description "[_ evaluation-portlet.lt_Evaluation_Evaluation]"]
+                   -description "#evaluation-portlet.lt_Evaluation_Evaluation#"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \
@@ -491,7 +491,7 @@ ad_proc -private evaluation_admin_portlet::after_install {} {
     db_transaction {
 	set ds_id [portal::datasource::new \
                    -name "evaluation_admin_portlet" \
-                   -description "[_ evaluation-portlet.lt_Evaluation_Admin_Port]"]
+                   -description "#evaluation-portlet.lt_Evaluation_Admin_Port#"]
 
 	portal::datasource::set_def_param \
             -datasource_id $ds_id \
