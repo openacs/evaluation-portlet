@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="evaluation-portlet" package_version="2.2.0b2" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Add_grade_name_">Adicionar %grade_name%</msg>
+  <msg key="Addedit_answer_">Adicionar/Editar resposta</msg>
+  <msg key="delete">Deletar</msg>
+  <msg key="Delete_task_">Deletar tarefa</msg>
+  <msg key="edit">Editar</msg>
+  <msg key="Edit_task_">Editar tarefa</msg>
+  <msg key="evaluate">Avaliar</msg>
+  <msg key="Evaluations_">Avalções</msg>
+  <msg key="Grades">Repoetar</msg>
+  <msg key="lt_Administer_Evaluation">Administra Avaliações</msg>
+  <msg key="lt_View_evaluation_comme">Ver comentários das avaliações</msg>
+  <msg key="lt_View_evaluation_detai">Ver comentários</msg>
+  <msg key="maximum">(máximo)</msg>
+  <msg key="Name_">NOME</msg>
+  <msg key="Not_available_">Não disponível</msg>
+  <msg key="Not_evaluated_">Não Avaliado</msg>
+  <msg key="solution">SOLUÇÃO</msg>
+  <msg key="submit_answer_">enviar resposta</msg>
+  <msg key="submit_answer_again_">enviar resposta novamente</msg>
+  <msg key="Submitted">ENVIADO</msg>
+  <msg key="task_name_No_data_">%task_name% (Sem dados)</msg>
+  <msg key="task_name_URL_">%task_name% (URL)</msg>
+  <msg key="Total_Points">&lt;center&gt;Pontos Totais&lt;/center&gt;</msg>
+  <msg key="View_comments_">Ver comentários</msg>
+  <msg key="View_my_answer_">Ver minhas respostas</msg>
+  <msg key="View_task_">Ver tarefas</msg>
+</message_catalog>

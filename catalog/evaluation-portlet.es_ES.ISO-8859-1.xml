@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="evaluation-portlet" package_version="0.1d" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="evaluation-portlet" package_version="2.2.0b2" locale="es_ES" charset="ISO-8859-1">
 
   <msg key="Add_grade_name_">Agregar %grade_name%</msg>
   <msg key="Addedit_answer_">Agregar/Editar respuesta</msg>
@@ -26,7 +26,7 @@
   <msg key="Groups_Admin_">Administración de Grupos</msg>
   <msg key="lt_Admin_my_Assignment_T">Administrar mis Tipos de Asignación</msg>
   <msg key="lt_Administer_Evaluation">Administrar Evaluación</msg>
-  <msg key="lt_Edit_grades_distribut">Editar distribución de notas de %grade_plural_name%</msg>
+  <msg key="lt_Edit_grades_distribut">Editar distribución de notas de %low_name%</msg>
   <msg key="lt_Evaluation_Admin_Port">Portlet de Administración de Evaluación</msg>
   <msg key="lt_Evaluation_Administra">Administración de Evaluación</msg>
   <msg key="lt_Evaluation_Assignment">Portlet de Evaluación de Asignaciones </msg>
@@ -69,4 +69,5 @@
   <msg key="View_task_">Ver tarea</msg>
   <msg key="ViewEdit_Solution_">Ver/Editar Solución</msg>
   <msg key="Weight_">Ponderación:</msg>
+  <msg key="weight_possible_of_grade_">&lt;text class=&quot;blue&quot;&gt;(del 100% de &lt;/text&gt;</msg>
 </message_catalog>
