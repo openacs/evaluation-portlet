@@ -5,7 +5,7 @@ ad_page_contract {
 }
 
 set package_id [ad_conn package_id]
-set user_id [ad_conn user_id]
+set user_id [ad_verify_and_get_user_id]
 set admin_p [permission::permission_p -party_id $user_id -object_id $package_id -privilege admin]
 
 db_1row grade_names { *SQL* }
@@ -95,7 +95,7 @@ if { $admin_p } {
 
     db_multirow -extend { solution_url due_date_pretty solution solution_mode task_url groups_admin groups_admin_url } tasks_admin get_tasks_admin { *SQL* } {
 
-	set due_date_pretty [lc_time_fmt $due_date_ansi "%q %r"]
+	set due_date_pretty [lc_time_fmt $due_date_ansi "%q %X"]
 
 	# working with task stuff (if it has a file/url attached)
 	if { [empty_string_p $task_data] } {
@@ -162,29 +162,29 @@ if { $admin_p } {
 
 	if { [string eq $online_p "t"] } {
 	    if { [db_string compare_due_date { *SQL* } -default 0] } {
-			if { ![db_0or1row answer_info { *SQL* }] } {
-				set answer "[_ evaluation-portlet.submit_answer_]"
-				set answer_mode edit
-				set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
-			} else { 
-				set answer "[_ evaluation-portlet.submit_answer_again_]"
-				set answer_mode display
-				set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
-			}
+		if { ![db_0or1row answer_info { *SQL* }] } {
+		    set answer "[_ evaluation-portlet.submit_answer_]"
+		    set answer_mode edit
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
+		} else { 
+		    set answer "[_ evaluation-portlet.submit_answer_again_]"
+		    set answer_mode display
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
+		}
 	    } elseif { [string eq $late_submit_p "t"] } {
-			if { ![db_0or1row answer_info { *SQL* }] } {
-				set answer "[_ evaluation-portlet.lt_Submit_answer_span_st]"
-				set answer_mode edit
-				set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
-			} else {
-				set answer "[_ evaluation-portlet.lt_Submit_answer_again_s]"
-				set answer_mode display
-				set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
-			}
+		if { ![db_0or1row answer_info { *SQL* }] } {
+		    set answer "[_ evaluation-portlet.lt_submit_answer_style_f]"
+		    set answer_mode edit
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id return_url answer_mode }]"
+		} else {
+		    set answer "[_ evaluation-portlet.lt_submit_answer_style_f_1]"
+		    set answer_mode display
+		    set answer_url "[export_vars -base "${base_url}answer-add-edit" { grade_id task_id answer_id return_url answer_mode }]"
+		}
 	    }
 	    if { $number_of_members > 1 && [string eq [db_string get_group_id { *SQL* }] 0] } {
-			set answer "[_ evaluation-portlet.No_group_for_task_]"
-			set answer_url ""
+		set answer "[_ evaluation-portlet.No_group_for_task_]"
+		set answer_url ""
 	    }
 	}
 	

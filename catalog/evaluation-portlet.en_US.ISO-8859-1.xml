@@ -1,57 +1,83 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="evaluation-portlet" package_version="0.1d" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="evaluation-portlet" package_version="2.2.0b2" locale="en_US" charset="ISO-8859-1">
 
   <msg key="Add_grade_name_">Add %grade_name% </msg>
   <msg key="Addedit_answer_">Add/edit answer </msg>
   <msg key="Addedit_solution_">Add/edit solution </msg>
-  <msg key="Assignments_">Assignments </msg>
+  <msg key="admin_help">Create, change or delete a course assignment type.</msg>
+  <msg key="Assignments">Assignments</msg>
+  <msg key="Assignments_">Gradebook </msg>
   <msg key="Audit_Info_">Audit Info. </msg>
   <msg key="Audit_info_">Audit info </msg>
-  <msg key="Comments_">Comments </msg>
+  <msg key="class_total">&lt;center&gt;&lt;text class=&quot;blue&quot;&gt;Your total grade in this class is: &lt;b&gt;%total_class_grade%/%max_possible_grade% &lt;/b&gt;&lt;/text&gt;&lt;/center&gt;</msg>
+  <msg key="Comments_">&lt;center&gt;COMMENTS
+&lt;/center&gt;</msg>
+  <msg key="delete">Delete</msg>
   <msg key="Delete_task_">Delete task </msg>
-  <msg key="Due_date_">Due date </msg>
+  <msg key="Due_date_">&lt;center&gt;DUE DATE&lt;/center&gt;</msg>
+  <msg key="edit">Edit</msg>
+  <msg key="edit_grade_scale">Edit Grading Scale</msg>
   <msg key="Edit_task_">Edit task </msg>
-  <msg key="Evaluations_">Evaluations </msg>
-  <msg key="Grade_over_100_">Grade over 100 </msg>
+  <msg key="email_notif">&lt;text class=&quot;blue&quot;&gt;Email Notification?&lt;/text&gt;</msg>
+  <msg key="evaluate">Evaluate</msg>
+  <msg key="Evaluations_">Evaluations</msg>
+  <msg key="full_version">Full Version: Assignments and Evaluations Portlet</msg>
+  <msg key="grade">GRADE</msg>
+  <msg key="Grade_over_100_">&lt;center&gt;GRADE % &lt;br&gt;(OF 100%) &lt;/center&gt;</msg>
   <msg key="Grades">Report</msg>
   <msg key="Groups_Admin_">Groups Admin. </msg>
-  <msg key="lt_Admin_my_Assignment_T">Admin my Assignment Types</msg>
+  <msg key="lt_Admin_my_Assignment_T">Modify Assignment Types</msg>
   <msg key="lt_Administer_Evaluation">Administer Evaluation</msg>
-  <msg key="lt_Edit_grades_distribut">Edit grades distribution of %grade_plural_name% </msg>
+  <msg key="lt_Edit_grades_distribut">Edit grades distribution of %low_name% </msg>
   <msg key="lt_Evaluation_Admin_Port">Evaluation Admin Portlet </msg>
   <msg key="lt_Evaluation_Administra">Evaluation Administration </msg>
   <msg key="lt_Evaluation_Assignment">Evaluation Assignments Portlet </msg>
   <msg key="lt_Evaluation_Evaluation">Evaluation Evaluations Portlet </msg>
   <msg key="lt_Groups_administration">Groups administration </msg>
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Total points in this category: %total_grade%/%max_grade%&lt;br /&gt;
-                     This grade category represents the %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
-  <msg key="lt_smallTotal_points_in__1">Total points in this category: %total_grade%/%max_grade% </msg>
-  <msg key="lt_smallWeight_used_in_g">&lt;small&gt;Weight used in %grade_plural_name%: %category_weight%% (over 100% of %grade_plural_name%) &lt;br /&gt;
-                      %grade_plural_name% represents %grade_weight%% of the 100% of the class&lt;/small&gt; </msg>
-  <msg key="lt_Submit_answer_again_s">Submit answer again (&lt;span style=color:red;&gt;late&lt;/span&gt;)</msg>
-  <msg key="lt_Submit_answer_span_st">Submit answer (&lt;span style=color:red;&gt;late&lt;/span&gt;)</msg>
+                     This grade category represents the %grade_weight%% of the 100% of the class
+&lt;small&gt;</msg>
+  <msg key="lt_smallTotal_points_in__1">&lt;text class=&quot;blue&quot;&gt;%grade_plural_name%  TOTAL:&lt;/text&gt;</msg>
+  <msg key="lt_smallWeight_used_in_g">&lt;text class=&quot;blue&quot;&gt;&lt;b&gt;%grade_plural_name% TOTALS:&lt;/text&gt;</msg>
   <msg key="lt_submit_answer_style_f">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; </msg>
   <msg key="lt_submit_answer_style_f_1">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; again </msg>
   <msg key="lt_There_are_no_tasks_fo">There are no tasks for this package.</msg>
   <msg key="lt_There_are_no_tasks_to">There are no tasks to evaluate for this package.</msg>
   <msg key="lt_There_should_be_only_">There should be only one instance of evaluation for admin purposes </msg>
   <msg key="lt_View_evaluation_comme">View evaluation comments </msg>
-  <msg key="lt_View_evaluation_detai">View evaluation details </msg>
+  <msg key="lt_View_evaluation_detai">View comments</msg>
   <msg key="lt_Your_total_grade_in_t">Your total grade in this class is:</msg>
-  <msg key="Name_">Name </msg>
+  <msg key="maximum">(maximum)</msg>
+  <msg key="Name_">NAME</msg>
   <msg key="Net_Value_">Net Value </msg>
   <msg key="No_assignments_">No assignments </msg>
   <msg key="No_group_for_task_">No group for task </msg>
   <msg key="Not_available_">Not available </msg>
   <msg key="Not_evaluated_">Not evaluated </msg>
+  <msg key="notif_help">Text for notifications</msg>
+  <msg key="point_value">POINT VALUE</msg>
+  <msg key="Points">&lt;center&gt;POINTS MADE&lt;/center&gt;</msg>
+  <msg key="points_value">POINTS VALUE</msg>
+  <msg key="select_version">Portlet Presentation</msg>
+  <msg key="simple_version">Simple Version: Evaluations Portlet, based on perfect score feature.</msg>
+  <msg key="solution">SOLUTION</msg>
   <msg key="submit_answer_">submit answer </msg>
   <msg key="submit_answer_again_">submit answer again </msg>
+  <msg key="Submitted">SUBMITTED</msg>
   <msg key="task_name_No_data_">%task_name% (No data) </msg>
   <msg key="task_name_URL_">%task_name% (URL) </msg>
+  <msg key="total_grade">of Total Grade</msg>
+  <msg key="Total_Points">&lt;center&gt;TOTAL POINTS
+&lt;/center&gt;</msg>
   <msg key="Upload_Solution_">Upload Solution </msg>
+  <msg key="version_label">Choose your portlet presentation:</msg>
   <msg key="View_comments_">View comments </msg>
+  <msg key="view_grades_help">View students grades across all assignments and evaluations.</msg>
   <msg key="View_my_answer_">View my answer </msg>
+  <msg key="view_students_grades">View Students Grades</msg>
   <msg key="View_task_">View task </msg>
   <msg key="ViewEdit_Solution_">View/Edit Solution </msg>
-  <msg key="Weight_">Weight </msg>
+  <msg key="Weight_">ITEM WEIGHT</msg>
+  <msg key="weight_possible_of_grade_">&lt;text class=&quot;blue&quot;&gt;(of a possible 100% of &lt;/text&gt;</msg>
+  <msg key="weight_possible_of_grade_p">&lt;text class=&quot;blue&quot;&gt;(of a possible 100% of %grade_plural_name%)</msg>
 </message_catalog>
