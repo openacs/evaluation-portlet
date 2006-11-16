@@ -1,7 +1,9 @@
 
   <if @shaded_p@ ne "t">
     <ul>
-    <li>@notification_chunk;noquote@<br /></li>
+    <li>@notification_chunk;noquote@</li>
+    </ul>
+    <ul>
     <if @grades:rowcount@ eq 0>
       <li>#evaluation-portlet.lt_There_are_no_tasks_fo#</li>
     </if><else>
