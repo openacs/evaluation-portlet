@@ -38,6 +38,7 @@ if { $simple_p } {
 set elements [list task_name \
 		  [list label "[_ evaluation-portlet.Name_]" \
 		       link_url_col task_url \
+		       link_html { title "[_ evaluation-portlet.view_details]" } \
 		       orderby_asc {task_name asc} \
 		       aggregate "" \
 		       aggregate_label "@bottom_line;noquote@"\
@@ -80,7 +81,7 @@ if { $admin_p } {
 	    [list label "" \
 		 link_url_col audit_info_url \
 		 link_html { title "[_ evaluation-portlet.Audit_info_]" }]
-	set bulk_actions [list "[_ evaluation-portlet.lt_Edit_grades_distribut]" [export_vars -base "${base_url}admin/grades/distribution-edit" { grade_id }]]
+	set bulk_actions [list "[_ evaluation-portlet.lt_Edit_grades_distribut]" [export_vars -base "${base_url}admin/grades/distribution-edit" { grade_id }] "[_ evaluation-portlet.lt_Edit_grades_distribut]"]
 	
     }
     set multirow_name grade_tasks_admin

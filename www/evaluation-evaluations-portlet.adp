@@ -3,14 +3,14 @@
    <ul>
    <if @admin_p@ eq 1>
    <if @simple_p@ eq 1>
-     <li class="arrow"><a href="evaluation/admin/grades/grades"><text class="blue"><b>#evaluation-portlet.lt_Admin_my_Assignment_T#</b></text></a><br>
+     <li class="arrow"><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Asignment_T#"><text class="blue"><b>#evaluation-portlet.lt_Admin_my_Assignment_T#</b></text></a><br>
 	<text class="blue">#evaluation-portlet.admin_help#</text></li>
-      <li class="arrow"><a href="evaluation/admin/grades/grades-reports"><text class="blue"><b>#evaluation-portlet.view_students_grades#</b></text></a><br>
+      <li class="arrow"><a href="evaluation/admin/grades/grades-reports" title="#evaluation-portlet.view_students_grades#"><text class="blue"><b>#evaluation-portlet.view_students_grades#</b></text></a><br>
 	<text class="blue">#evaluation-portlet.view_grades_help#</text></li>
       <li class="arrow"><text class="blue"><b>Notifications</b>
    </if>
   <else>
-      <li><a href="evaluation/admin/grades/grades">#evaluation-portlet.lt_Admin_my_Assignment_T#</a><br /></li>
+      <li><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Assignment_T#">#evaluation-portlet.lt_Admin_my_Assignment_T#</a><br /></li>
   </else>  
    </if>
   <if @simple_p@ eq 1>

@@ -17,6 +17,7 @@ set return_url "[ad_conn url]?[ns_conn query]"
 set elements [list task_name \
 		  [list label "[_ evaluation-portlet.Name_]" \
 		       link_url_col task_url \
+		       link_html { title "[_ evaluation-portlet.view_details]" } \
 		       orderby_asc {task_name asc} \
 		       orderby_desc {task_name desc}] \
 		  due_date_pretty \
@@ -55,7 +56,7 @@ if { $admin_p } {
 		     link_html { title "[_ evaluation-portlet.Delete_task_]" }]
 	
 	set multirow_name tasks_admin
-	set actions [list "[_ evaluation-portlet.Add_grade_name_]" [export_vars -base "${base_url}admin/tasks/task-add-edit" { return_url grade_id }] ]
+	set actions [list "[_ evaluation-portlet.Add_grade_name_]" [export_vars -base "${base_url}admin/tasks/task-add-edit" { return_url grade_id }] [_ evaluation-portlet.Add_grade_name_]]
 } else { 
 	#student
 	lappend elements answer \
