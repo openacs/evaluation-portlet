@@ -15,6 +15,7 @@
   <msg key="Delete_task_">Eliminar tarea</msg>
   <msg key="Due_date_">Fecha de Entrega</msg>
   <msg key="edit">Editar</msg>
+  <msg key="edit_grade_scale">Editar notas</msg>
   <msg key="Edit_task_">Editar tarea</msg>
   <msg key="email_notif">&lt;text class=&quot;blue&quot;&gt;¿Notificar por correo?&lt;/text&gt;</msg>
   <msg key="evaluate">Evaluar</msg>
@@ -52,7 +53,9 @@
   <msg key="Not_available_">No disponible</msg>
   <msg key="Not_evaluated_">Sin evaluar</msg>
   <msg key="notif_help">Texto para notificaciones</msg>
+  <msg key="point_value">PUNTUACIÓN</msg>
   <msg key="Points">&lt;center&gt;PUNTOS OBTENIDOS&lt;/center&gt;</msg>
+  <msg key="points_value">PUNTUACIÓN</msg>
   <msg key="select_version">Presentación del portlet</msg>
   <msg key="simple_version">Versión Sencilla: Portlet de Evaluación</msg>
   <msg key="solution">SOLUCIÓN</msg>
@@ -61,14 +64,17 @@
   <msg key="Submitted">ENVIADO</msg>
   <msg key="task_name_No_data_">%task_name% (vacío)</msg>
   <msg key="task_name_URL_">%task_name% (URL)</msg>
+  <msg key="total_grade">de la nota final</msg>
   <msg key="Total_Points">&lt;center&gt;PUNTOS TOTALES&lt;/center&gt;</msg>
   <msg key="Upload_Solution_">Subir Solución</msg>
   <msg key="version_label">Elija la presentación del portlet:</msg>
   <msg key="View_comments_">Ver comentarios</msg>
+  <msg key="view_grades_help">Ver la nota de todos los estudiatens en todas las tareas y evaluaciones</msg>
   <msg key="View_my_answer_">Ver mi respuesta</msg>
   <msg key="view_students_grades">Ver notas de alumnos</msg>
   <msg key="View_task_">Ver tarea</msg>
   <msg key="ViewEdit_Solution_">Ver/Editar Solución</msg>
   <msg key="Weight_">Ponderación:</msg>
   <msg key="weight_possible_of_grade_">&lt;text class=&quot;blue&quot;&gt;(del 100% de &lt;/text&gt;</msg>
+  <msg key="weight_possible_of_grade_p">&amp;lt;text class=&amp;quot;blue&amp;quot;&amp;gt;(de un posible 100% de %grade_plural_name%)</msg>
 </message_catalog>
