@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="evaluation-portlet" package_version="2.2.0b2" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="evaluation-portlet" package_version="2.2.0" locale="en_US" charset="ISO-8859-1">
 
   <msg key="Add_grade_name_">Add %grade_name% </msg>
   <msg key="Addedit_answer_">Add/edit answer </msg>
@@ -49,6 +49,7 @@
   <msg key="lt_Your_total_grade_in_t">Your total grade in this class is:</msg>
   <msg key="maximum">(maximum)</msg>
   <msg key="Name_">NAME</msg>
+  <msg key="Net_Value">Net Value</msg>
   <msg key="Net_Value_">Net Value </msg>
   <msg key="No_assignments_">No assignments </msg>
   <msg key="No_group_for_task_">No group for task </msg>
@@ -72,6 +73,7 @@
   <msg key="Upload_Solution_">Upload Solution </msg>
   <msg key="version_label">Choose your portlet presentation:</msg>
   <msg key="View_comments_">View comments </msg>
+  <msg key="view_details">View details</msg>
   <msg key="view_grades_help">View students grades across all assignments and evaluations.</msg>
   <msg key="View_my_answer_">View my answer </msg>
   <msg key="view_students_grades">View Students Grades</msg>
