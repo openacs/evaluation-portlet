@@ -19,7 +19,7 @@
   <msg key="lt_Administer_Evaluation">Evaluierung administrieren</msg>
   <msg key="lt_Edit_grades_distribut">Gewichtungsverteilung von &quot;%grade_plural_name%&quot; verändern</msg>
   <msg key="lt_Evaluation_Admin_Port">Admin Portlet für Bewertungen </msg>
-  <msg key="lt_Evaluation_Administra">Bewertungen administrieren</msg>
+  <msg key="lt_Evaluation_Administra">Evaluierung administrieren</msg>
   <msg key="lt_Evaluation_Assignment">Admin Portlet für Aufgabenzuweisungen</msg>
   <msg key="lt_Groups_administration">Gruppen administrieren</msg>
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Gesamtpunkte in dieser Kategorie: %total_grade%/%max_grade%&lt;br /&gt; Diese Bewertungskategorie macht %grade_weight%% von 100% der Gesamtklassenleistung aus&lt;/small&gt;  </msg>
@@ -36,6 +36,7 @@
   <msg key="No_group_for_task_">Keine Gruppe für diese Aufgabe</msg>
   <msg key="Not_available_">nicht vorhanden</msg>
   <msg key="Not_evaluated_">nicht bewertet</msg>
+  <msg key="select_version">Portlet-Darstellung</msg>
   <msg key="submit_answer_">Anwort abschicken</msg>
   <msg key="submit_answer_again_">Antwort nochmal abschicken</msg>
   <msg key="task_name_No_data_">%task_name% (keine Daten)  </msg>
