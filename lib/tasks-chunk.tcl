@@ -62,7 +62,7 @@ if { $admin_p } {
 	lappend elements answer \
 	    [list label "" \
 		 link_url_col answer_url \
-		 display_template { @tasks.answer;noquote@ } \
+             display_template { @tasks_${grade_id}.answer;noquote@ } \
 		 link_html { title "[_ evaluation-portlet.Addedit_answer_]" }]
 	lappend elements view \
 		[list label "" \
@@ -75,7 +75,7 @@ if { $admin_p } {
 }
 
 template::list::create \
-    -name tasks \
+    -name tasks_${grade_id} \
     -multirow $multirow_name \
     -actions $actions \
     -key task_id \
@@ -86,7 +86,7 @@ template::list::create \
     -elements $elements \
     -orderby { default_value task_name }
 
-set assignments_orderby [template::list::orderby_clause -orderby -name tasks]
+set assignments_orderby [template::list::orderby_clause -orderby -name tasks_${grade_id}]
 
 if {[string equal $assignments_orderby ""]} {
     set assignments_orderby " order by task_name asc"

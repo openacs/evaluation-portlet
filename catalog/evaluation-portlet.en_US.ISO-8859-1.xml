@@ -14,7 +14,7 @@
 &lt;/center&gt;</msg>
   <msg key="delete">Delete</msg>
   <msg key="Delete_task_">Delete task </msg>
-  <msg key="Due_date_">&lt;center&gt;DUE DATE&lt;/center&gt;</msg>
+  <msg key="Due_date_">DUE DATE</msg>
   <msg key="edit">Edit</msg>
   <msg key="edit_grade_scale">Edit Grading Scale</msg>
   <msg key="Edit_task_">Edit task </msg>
