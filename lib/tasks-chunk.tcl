@@ -39,19 +39,19 @@ if { $admin_p } {
 	lappend elements view \
 		[list label "" \
 			 sub_class narrow \
-			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0">} \
+			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0" alt="[_ evaluation-portlet.View_task_]">} \
 			 link_url_eval {[export_vars -base "${base_url}admin/tasks/task-add-edit" { grade_id task_id mode return_url }]} \
 			 link_html { title "[_ evaluation-portlet.View_task_]" }]
 	lappend elements edit \
 		[list label "" \
 			 sub_class narrow \
-			 display_template {<img src="/resources/acs-subsite/Edit16.gif" width="16" height="16" border="0">} \
+			 display_template {<img src="/resources/acs-subsite/Edit16.gif" width="16" height="16" border="0" alt="[_ evaluation-portlet.Edit_task_]">} \
 			 link_url_eval {[export_vars -base "${base_url}admin/tasks/task-add-edit" { grade_id return_url item_id task_id }]} \
 			 link_html { title "[_ evaluation-portlet.Edit_task_]" }] 
 	lappend elements delete \
 		[list label "" \
 		     sub_class narrow \
-		     display_template {<img src="/resources/acs-subsite/Delete16.gif" width="16" height="16" border="0">} \
+		     display_template {<img src="/resources/acs-subsite/Delete16.gif" width="16" height="16" border="0" alt="[_ evaluation-portlet.Delete_task_]">} \
 		     link_url_eval {[export_vars -base "${base_url}admin/tasks/task-delete" { grade_id task_id return_url }]} \
 		     link_html { title "[_ evaluation-portlet.Delete_task_]" }]
 	
@@ -62,12 +62,12 @@ if { $admin_p } {
 	lappend elements answer \
 	    [list label "" \
 		 link_url_col answer_url \
-             display_template { @tasks_${grade_id}.answer;noquote@ } \
+             display_template { @tasks.answer;noquote@ } \
 		 link_html { title "[_ evaluation-portlet.Addedit_answer_]" }]
 	lappend elements view \
 		[list label "" \
 			 sub_class narrow \
-			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0">} \
+			 display_template {<img src="/resources/acs-subsite/Zoom16.gif" width="16" height="16" border="0" alt="[_ evaluation-portlet.View_task_]">} \
 			 link_url_eval {[export_vars -base "${base_url}task-view" { grade_id task_id return_url }]} \
 			 link_html { title "[_ evaluation-portlet.View_task_]" }]
 	set multirow_name tasks
