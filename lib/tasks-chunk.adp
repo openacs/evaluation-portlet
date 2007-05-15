@@ -1,3 +1,3 @@
 
-<listtemplate name="tasks"></listtemplate>
+<listtemplate name="tasks_@grade_id@"></listtemplate>
 

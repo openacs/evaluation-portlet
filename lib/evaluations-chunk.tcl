@@ -131,8 +131,7 @@ if { $admin_p } {
     }
     lappend elements answer \
 	[list label "" \
-	     display_template {<a href=@grade_tasks.answer_url@ target=new>@grade_tasks.answer;noquote@</a>} \
-	     link_html { title "[_ evaluation-portlet.View_my_answer_]" }]
+	     display_template {<a href="@grade_tasks.answer_url@" title="[_ evaluation-portlet.View_my_answer_]" target=new>@grade_tasks.answer;noquote@</a>}]
     
     set multirow_name grade_tasks
     set actions ""
@@ -148,7 +147,7 @@ set solution_label ""
 
 
 template::list::create \
-    -name grade_tasks \
+    -name grade_tasks_${grade_id} \
     -multirow $multirow_name \
     -key task_id \
     -pass_properties { return_url mode base_url bottom_line max_grade_label max_weight_label solution_label submitted_label grade_of_label} \
@@ -161,7 +160,7 @@ template::list::create \
     -sub_class narrow \
     -orderby { default_value task_name }
 
-set evaluations_orderby [template::list::orderby_clause -orderby -name grade_tasks]
+set evaluations_orderby [template::list::orderby_clause -orderby -name grade_tasks_${grade_id}]
 
 if { [string equal $evaluations_orderby ""] } {
     set evaluations_orderby " order by task_name asc"

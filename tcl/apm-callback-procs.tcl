@@ -32,4 +32,18 @@ ad_proc -public evaluation_portlet::before_uninstall {} {
     }
 }
 
-
+ad_proc -private evaluation_portlet::after_upgrade {
+    {-from_version_name:required}
+    {-to_version_name:required}
+} {
+    After upgrade callback for evaluation portlets.
+} {
+    apm_upgrade_logic \
+        -from_version_name $from_version_name \
+        -to_version_name $to_version_name \
+        -spec {
+            2.3.0d1 2.3.0d2 {
+                db_dml update_portal_datasources {}
+            }
+    }
+}
