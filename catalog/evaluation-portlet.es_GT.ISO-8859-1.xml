@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="evaluation-portlet" package_version="2.3.0" locale="es_GT" charset="ISO-8859-1">
+<message_catalog package_key="evaluation-portlet" locale="es_GT" charset="ISO-8859-1">
 
   <msg key="Add_grade_name_">Agregar %grade_name%</msg>
   <msg key="Addedit_answer_">Agregar/Editar respuesta</msg>
