@@ -39,8 +39,8 @@
 &lt;small&gt;</msg>
   <msg key="lt_smallTotal_points_in__1">&lt;text class=&quot;blue&quot;&gt;%grade_plural_name%  TOTAL:&lt;/text&gt;</msg>
   <msg key="lt_smallWeight_used_in_g">&lt;text class=&quot;blue&quot;&gt;&lt;b&gt;%grade_plural_name% TOTALS:&lt;/text&gt;</msg>
-  <msg key="lt_submit_answer_style_f">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; </msg>
-  <msg key="lt_submit_answer_style_f_1">submit answer &lt;style font-color:red&gt;late&lt;/style&gt; again </msg>
+  <msg key="lt_submit_answer_style_f">submit answer &lt;style color:red&gt;late&lt;/style&gt; </msg>
+  <msg key="lt_submit_answer_style_f_1">submit answer &lt;style color:red&gt;late&lt;/style&gt; again </msg>
   <msg key="lt_There_are_no_tasks_fo">There are no tasks for this package.</msg>
   <msg key="lt_There_are_no_tasks_to">There are no tasks to evaluate for this package.</msg>
   <msg key="lt_There_should_be_only_">There should be only one instance of evaluation for admin purposes </msg>

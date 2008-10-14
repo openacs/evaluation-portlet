@@ -34,8 +34,8 @@
   <msg key="lt_smallTotal_points_in_">&lt;small&gt;Pontuação total nesta categoria: %total_grade%/%max_grade%&lt;br /&gt; Esta categoria de notas representa %grade_weight%% de 100% da classe &lt;small&gt;</msg>
   <msg key="lt_smallTotal_points_in__1">TOTAL &lt;text class=&quot;blue&quot;&gt;%grade_plural_name%:&lt;/text&gt;</msg>
   <msg key="lt_smallWeight_used_in_g">TOTAIS &lt;text class=&quot;blue&quot;&gt;%grade_plural_name%:&lt;/text&gt;</msg>
-  <msg key="lt_submit_answer_style_f">enviar resposta &lt;style font-color:red&gt;late&lt;/style&gt;</msg>
-  <msg key="lt_submit_answer_style_f_1">Enviar resposta &lt;style font-color:red&gt;atrasada&lt;/style&gt; de novo</msg>
+  <msg key="lt_submit_answer_style_f">enviar resposta &lt;style color:red&gt;late&lt;/style&gt;</msg>
+  <msg key="lt_submit_answer_style_f_1">Enviar resposta &lt;style color:red&gt;atrasada&lt;/style&gt; de novo</msg>
   <msg key="lt_There_are_no_tasks_fo">Não há tarefas para este pacote.</msg>
   <msg key="lt_There_are_no_tasks_to">Não há tarefas para avaliar para este pacote.</msg>
   <msg key="lt_There_should_be_only_">Deve haver apenas uma instância para fins de administração</msg>
