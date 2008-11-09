@@ -33,7 +33,7 @@
         <li><strong>@grades.grade_plural_name;noquote@</strong>
        </if> 
        <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
-       <br/><br/>
+       <br><br>
        <if @simple_p@ eq 0></li></if> 
       </multiple>
      </ul>

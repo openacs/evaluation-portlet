@@ -15,7 +15,7 @@ set class "list"
 set bulk_actions ""
 db_1row get_grade_info { *SQL* }
 
-set submitted_label "<center>[_ evaluation-portlet.lt_smallTotal_points_in__1]</center>"
+set submitted_label "<span style=\"text-align:center\">[_ evaluation-portlet.lt_smallTotal_points_in__1]</span>"
 
 if { $admin_p } {
     if { $simple_p } {
@@ -48,7 +48,7 @@ if { $admin_p } {
     if { $simple_p } {
     	lappend elements perfect_score \
 	    [list label "[_ evaluation-portlet.points_value]" \
-		 display_template { <center>@grade_tasks_admin.perfect_score@</center> } \
+		 display_template { @grade_tasks_admin.perfect_score@ } \
 		 orderby_asc {perfect_score asc} \
 		 aggregate "" \
 		 aggregate_label "@max_grade_label;noquote@" \
@@ -56,26 +56,26 @@ if { $admin_p } {
     }
     lappend elements task_weight \
 	[list label "[_ evaluation-portlet.Weight_]" \
-	     display_template { <center>@grade_tasks_admin.task_weight@%</center> } \
+	     display_template {<span style="text-align:center">@grade_tasks_admin.task_weight@%</span> } \
 	     orderby_asc {task_weight asc} \
 	     orderby_desc {task_weight desc} \
 	     aggregate "" \
 	     aggregate_label "@max_weight_label;noquote@"]  
     if { $simple_p } {
 	lappend elements solution \
-	    [list label "<center>[_ evaluation-portlet.solution]</center>" \
-		 display_template "<center>@grade_tasks_admin.solution@</center>" \
+	    [list label "<span style=\"text-align:center\">[_ evaluation-portlet.solution]</span>" \
+		 display_template "<span style=\"text-align:center\">@grade_tasks_admin.solution@</span>" \
 		 link_url_col solution_url \
 		 aggregate "" \
 		 aggregate_label "@solution_label;noquote@"]
 	lappend elements grade \
 	    [list label "[_ evaluation-portlet.grade]" \
 		 link_url_col grade_url \
-		 display_template { <center>[_ evaluation-portlet.evaluate]</center> } ]
+		 display_template {<span style="text-align:center">[_ evaluation-portlet.evaluate]</span> } ]
 	lappend elements edit \
 	    [list label "" \
 		 sub_class narrow \
-		 display_template {<center><a href=${base_url}admin/tasks/task-add-edit?grade_id=$grade_id&return_url=$return_url&task_id=@grade_tasks_admin.task_id@>[_ evaluation-portlet.edit]</a><br><a href=${base_url}admin/tasks/task-delete?grade_id=$grade_id&return_url=$return_url&task_id=@grade_tasks_admin.task_id@>[_ evaluation-portlet.delete]</a></center>}]
+		 display_template {<a href=${base_url}admin/tasks/task-add-edit?grade_id=$grade_id&return_url=$return_url&task_id=@grade_tasks_admin.task_id@>[_ evaluation-portlet.edit]</a><br><a href=${base_url}admin/tasks/task-delete?grade_id=$grade_id&return_url=$return_url&task_id=@grade_tasks_admin.task_id@>[_ evaluation-portlet.delete]</a>}]
     } else {
 	lappend elements audit_info \
 	    [list label "" \
@@ -85,26 +85,26 @@ if { $admin_p } {
 	
     }
     set multirow_name grade_tasks_admin
-    set actions "<a href=\"${base_url}admin/tasks/task-add-edit?grade_id=$grade_id&return_url=$return_url\" class=\"tlmidnav\"><img src=\"/resources/evaluation/cross.gif\" width=\"10\" height=\"9\" hspace=\"5\" vspace=\"1\" border=\"0\" align=\"absmiddle\">\#evaluation-portlet.Add_grade_name_\#</a><a href=\"${base_url}admin/grades/distribution-edit?grade_id=$grade_id\" class=\"tlmidnav\"><img src=\"/resources/evaluation/cross.gif\" width=\"10\" height=\"9\" hspace=\"5\" vspace=\"1\" border=\"0\" align=\"absmiddle\">\#evaluation-portlet.edit_grade_scale\#</a>"
+    set actions "<a href=\"${base_url}admin/tasks/task-add-edit?grade_id=$grade_id&return_url=$return_url\" class=\"tlmidnav\"><img src=\"/resources/evaluation/cross.gif\" width=\"10\" height=\"9\" hspace=\"5\" vspace=\"1\" style=\"border:0\" align=\"absmiddle\">\#evaluation-portlet.Add_grade_name_\#</a><a href=\"${base_url}admin/grades/distribution-edit?grade_id=$grade_id\" class=\"tlmidnav\"><img src=\"/resources/evaluation/cross.gif\" width=\"10\" height=\"9\" hspace=\"5\" vspace=\"1\" style=\"border:0\" align=\"absmiddle\">\#evaluation-portlet.edit_grade_scale\#</a>"
     
 } else { 
     #student
     if { $simple_p } {
         lappend elements submitted \
-	    [list label "<center>[_ evaluation-portlet.Submitted]</center>" \
-		 display_template { <center>@grade_tasks.submitted_date;noquote@</center> } \
+	    [list label "<span style=\"text-align:center\">[_ evaluation-portlet.Submitted]</span>" \
+		 display_template {<span style="text-align:center">@grade_tasks.submitted_date;noquote@</span> } \
 		 aggregate "" \
 		 link_url_col submitted_date_url \
 		 aggregate_label "@submitted_label;noquote@" ]
 	
 	lappend elements task_grade \
 	    [list label "[_ evaluation-portlet.Points]" \
-		 display_template { <center>@grade_tasks.task_grade@</center> } \
+		 display_template {<span style="text-align:center">@grade_tasks.task_grade@</span> } \
 		 aggregate "" \
 		 aggregate_label "@max_grade_label;noquote@" ]
 	lappend elements task_weight \
 	    [list label "[_ evaluation-portlet.Total_Points]" \
-		 display_template { <center>@grade_tasks.perfect_score@</center> } \
+		 display_template {<span style="text-align:center">@grade_tasks.perfect_score@</span> } \
 		 orderby_asc {task_weight asc} \
 		 orderby_desc {task_weight desc} \
 		 aggregate "" \
@@ -112,7 +112,7 @@ if { $admin_p } {
     } 
     lappend elements grade \
 	[list label "[_ evaluation-portlet.Grade_over_100_]" \
-	     display_template { <center>@grade_tasks.grade@</center> } \
+	     display_template {<span style="text-align:center">@grade_tasks.grade@</span>} \
 	     aggregate "" \
 	     aggregate_label "@grade_of_label;noquote@"]
     
@@ -124,7 +124,7 @@ if { $admin_p } {
     if {!$simple_p} {
 	lappend elements task_weight \
 	    [list label "[_ evaluation-portlet.Net_Value]" \
-		 display_template { <center>@grade_tasks.task_weight@</center> } \
+		 display_template {<span style="text-align:center">@grade_tasks.task_weight@</span> } \
 		 orderby_asc {task_weight asc} \
 		 orderby_desc {task_weight desc}] 
 	
@@ -179,11 +179,11 @@ if { $admin_p } {
 	set max_weight [format %0.2f [expr $max_weight + $task_weight]]
 	set task_weight [format %0.2f $task_weight]
 	set max_grade  [expr $max_grade + $perfect_score]
-	set max_grade_label "<center><text class=blue>$max_grade pts.</text></center>"
-	set solution_label "[_ evaluation-portlet.weight_possible_of_grade_] <text class=blue>$low_name )</text>"
+	set max_grade_label "<span class=blue>$max_grade pts.</span>"
+	set solution_label "[_ evaluation-portlet.weight_possible_of_grade_] <span class=blue>$low_name )</span>"
 	
 	if { $simple_p } {
-	    set max_weight_label "<center><text class=blue>$max_weight %</text></center>"
+	    set max_weight_label "<span class=blue>$max_weight %</span>"
 	}
 	if { [db_0or1row solution_info { *SQL* }] } { 
 	    set solution_mode display
@@ -286,8 +286,8 @@ if { $admin_p } {
 	    set answer ""
 	}
 	set max_weight [expr $max_weight + $perfect_score]
-	set max_grade_label "<center><text class=blue>$max_grade pts.</text></center>"
-	set max_weight_label "<center><text class=blue>$max_weight %</text></center>"
+	set max_grade_label "<span class=blue>$max_grade pts.</span>"
+	set max_weight_label "<span class=blue>$max_weight %</span>"
 	if { [empty_string_p $submitted_date]} {
 	    
 	    if { [string eq $online_p "t"] } {
