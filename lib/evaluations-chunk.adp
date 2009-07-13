@@ -10,7 +10,7 @@
 </table>
 </div>
 </if>
-<br>
+
 <listtemplate name="grade_tasks_@grade_id@"></listtemplate>
 <if @simple_p@ eq 0>
  <if @admin_p@ eq 1>

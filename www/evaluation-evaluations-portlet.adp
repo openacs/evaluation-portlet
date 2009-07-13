@@ -15,7 +15,6 @@
 
     <if @grades:rowcount@ eq 0>
        <p>#evaluation-portlet.lt_There_are_no_tasks_to#</p>
-	
     </if>
     <else>
       <multiple name="grades">
@@ -24,7 +23,6 @@
        </if> 
        <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
       </multiple>
-     </ul>
 
      <if @admin_p@ eq "0" and @one_instance_p@ eq "1">
       <p>#evaluation-portlet.lt_Your_total_grade_in_t# <strong>@total_class_grade@/@max_possible_grade@ </strong></p>
