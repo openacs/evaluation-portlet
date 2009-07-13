@@ -1,40 +1,28 @@
 
-  <if @shaded_p@ ne "t">
+  <if @shaded_p@ false>
    <ul>
     <if @admin_p@ eq 1>
      <if @simple_p@ eq 1>
-      <li class="arrow"><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Asignment_T#"><b>#evaluation-portlet.lt_Admin_my_Assignment_T#</b></a><br>
-	#evaluation-portlet.admin_help#</li>
-      <li class="arrow"><a href="evaluation/admin/grades/grades-reports" title="#evaluation-portlet.view_students_grades#"><b>#evaluation-portlet.view_students_grades#</b></a><br>
-	#evaluation-portlet.view_grades_help#</li>
-      <li class="arrow"><b>Notifications</b>
+      <li><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Asignment_T#">#evaluation-portlet.lt_Admin_my_Assignment_T#</a> (#evaluation-portlet.admin_help#)</li>
+      <li><a href="evaluation/admin/grades/grades-reports" title="#evaluation-portlet.view_students_grades#">#evaluation-portlet.view_students_grades#</a> (#evaluation-portlet.view_grades_help#)</li>
      </if>
      <else>
       <li><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Assignment_T#">#evaluation-portlet.lt_Admin_my_Assignment_T#</a></li>
      </else>  
     </if>
-    <if @simple_p@ eq 1>
-     <br>@notification_chunk;noquote@</li>
-    </if> 
-    <else>
-     <li>@notification_chunk;noquote@</li>
-    </else>
-   </ul>
+      <li>@notification_chunk;noquote@</li>
+    </ul>
 
     <if @grades:rowcount@ eq 0>
-	
-       <ul><li>#evaluation-portlet.lt_There_are_no_tasks_to#</li></ul>
+       <p>#evaluation-portlet.lt_There_are_no_tasks_to#</p>
 	
     </if>
     <else>
-     <ul>
       <multiple name="grades">
        <if @simple_p@ eq 0>
-        <li><strong>@grades.grade_plural_name;noquote@</strong>
+        <h2>@grades.grade_plural_name;noquote@</h2>
        </if> 
        <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
-       <br><br>
-       <if @simple_p@ eq 0></li></if> 
       </multiple>
      </ul>
 
@@ -45,7 +33,7 @@
 
   </if>
   <else>
-  &nbsp;
+    #new-portal.when_portlet_shaded#
   </else>
 
 

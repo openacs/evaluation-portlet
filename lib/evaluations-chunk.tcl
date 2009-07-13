@@ -48,7 +48,6 @@ if { $admin_p } {
     if { $simple_p } {
     	lappend elements perfect_score \
 	    [list label "[_ evaluation-portlet.points_value]" \
-		 display_template { @grade_tasks_admin.perfect_score@ } \
 		 orderby_asc {perfect_score asc} \
 		 aggregate "" \
 		 aggregate_label "@max_grade_label;noquote@" \
@@ -156,7 +155,6 @@ template::list::create \
     -no_data "[_ evaluation-portlet.No_assignments_]" \
     -elements $elements \
     -orderby_name evaluations_orderby \
-    -main_class $class \
     -sub_class narrow \
     -orderby { default_value task_name }
 
