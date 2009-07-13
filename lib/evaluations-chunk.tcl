@@ -130,7 +130,7 @@ if { $admin_p } {
     }
     lappend elements answer \
 	[list label "" \
-	     display_template {<a href="@grade_tasks.answer_url@" title="[_ evaluation-portlet.View_my_answer_]" target=new>@grade_tasks.answer;noquote@</a>}]
+	     display_template {<a href="@grade_tasks.answer_url@" title="[_ evaluation-portlet.View_my_answer_]">@grade_tasks.answer;noquote@</a>}]
     
     set multirow_name grade_tasks
     set actions ""
