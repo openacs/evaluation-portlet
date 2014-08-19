@@ -179,7 +179,7 @@ ad_proc evaluation::twt::view_task_solution { class_material_url task_name file_
     if { [string match  "*/classes/*/evaluation/admin/tasks/solution-add-edit*" $response_url] } {
 
 	set list_words [split "$file_name" /]
-	set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+	set short_file_name [lindex $list_words [llength $list_words]-1]
 	
 	if { [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
 	    aa_error  "evaluation::twt::view_task_solution failed $errmsg : Didn't view a Task Solution"
@@ -255,7 +255,7 @@ ad_proc evaluation::twt::view_task { class_material_url task_name task_descripti
     if {[string match  "*task-add-edit*$task_id*$grade_id" $response_url] } {
 
 	set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if { [catch {tclwebtest::assert text "$task_name" } errmsg] || [catch {tclwebtest::assert text "$task_description" } errmsg] || [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
 	    
@@ -305,7 +305,7 @@ ad_proc evaluation::twt::edit_task { class_material_url precedent_task_name task
     if {[string match $class_material_url $response_url] } {
 
 	set list_words [split "$file_name" /]
-	set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+	set short_file_name [lindex $list_words [llength $list_words]-1]
 
 	if {[catch {tclwebtest::assert text "$task_name" } errmsg]} {
 	    aa_error  "evaluation::twt::edit_task failed $errmsg : Didn't edit a Task"
@@ -450,7 +450,7 @@ ad_proc evaluation::twt::view_project_solution { class_material_url project_name
     if { [string match  "*/classes/*/evaluation/admin/tasks/solution-add-edit*"  $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 	aa_log $short_file_name
         if { [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
             aa_error  "evaluation::twt::view_project_solution failed $errmsg : Didn't view a Project Solution"
@@ -526,7 +526,7 @@ ad_proc evaluation::twt::view_project { class_material_url project_name project_
     if {[string match  "*/dotlrn/classes*/evaluation/admin/tasks/task-add-edit*" $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if { [catch {tclwebtest::assert text "$project_name" } errmsg] || [catch {tclwebtest::assert text "$project_description" } errmsg] || [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
 
@@ -577,7 +577,7 @@ ad_proc evaluation::twt::edit_project { class_material_url precedent_project_nam
     if {[string match  "$class_material_url" $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if {[catch {tclwebtest::assert text "$project_name" } errmsg]} {
             aa_error  "evaluation::twt::edit_project failed $errmsg : Didn't edit a Project"
@@ -722,7 +722,7 @@ ad_proc evaluation::twt::view_exam_solution { class_material_url exam_name file_
     if { [string match  "*/classes/*/evaluation/admin/tasks/solution-add-edit*"  $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if { [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
             aa_error  "evaluation::twt::view_exam_solution failed $errmsg : Didn't view an Exam Solution"
@@ -798,7 +798,7 @@ ad_proc evaluation::twt::view_exam { class_material_url exam_name exam_descripti
     if {[string match  "*/dotlrn/classes*/evaluation/admin/tasks/task-add-edit*" $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if { [catch {tclwebtest::assert text "$exam_name" } errmsg] || [catch {tclwebtest::assert text "$exam_description" } errmsg] || [catch {tclwebtest::assert text "$short_file_name" } errmsg] } {
 
@@ -849,7 +849,7 @@ ad_proc evaluation::twt::edit_exam { class_material_url precedent_exam_name exam
     if {[string match  "$class_material_url" $response_url] } {
 
         set list_words [split "$file_name" /]
-        set short_file_name [lindex $list_words [expr {[llength $list_words]-1}]]
+        set short_file_name [lindex $list_words [llength $list_words]-1]
 
         if {[catch {tclwebtest::assert text "$exam_name" } errmsg]} {
             aa_error  "evaluation::twt::edit_exam failed $errmsg : Didn't edit an Exam"
