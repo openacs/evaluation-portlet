@@ -35,7 +35,7 @@ foreach package_id $config(package_id) {
 db_multirow grades get_grades { *SQL* } {
 }
 
-if { [string eq $one_instance_p 1] && [string eq $admin_p 0] } {
+if { $one_instance_p eq "1" && $admin_p eq "0" } {
     set total_class_grade [lc_numeric [db_string get_total_grade { *SQL* }]]
     set max_possible_grade [lc_numeric [db_string max_possible_grade { *SQL* }]]
 }
