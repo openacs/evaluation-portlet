@@ -7,9 +7,9 @@ ad_page_contract {
     @creation-date May 2004
     @cvs_id $Id$
 } {
-    item_id:integer,notnull,optional,multiple
+    item_id:naturalnum,notnull,optional,multiple
     {assignments_orderby ""}
-    {page_num 0}
+    {page_num:naturalnum 0}
 } -properties {
 }
 
