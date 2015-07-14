@@ -8,7 +8,7 @@
     <else>
        <multiple name="grades">
         <h2>@grades.grade_plural_name@</h2>
-        <include src="../lib/tasks-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ assignments_orderby=@assignments_orderby@ page_num=@page_num@>
+        <include src="../lib/tasks-chunk" grade_id="@grades.grade_id;literal@" grade_item_id="@grades.grade_item_id;literal@" assignments_orderby="@assignments_orderby;literal@" page_num="@page_num;literal@">
       </multiple>
     </else>
   </if>

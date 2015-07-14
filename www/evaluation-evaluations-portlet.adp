@@ -21,7 +21,7 @@
        <if @simple_p@ eq 0>
         <h2>@grades.grade_plural_name;noquote@</h2>
        </if> 
-       <include src="../lib/evaluations-chunk" grade_id=@grades.grade_id@ grade_item_id=@grades.grade_item_id@ evaluations_orderby=@evaluations_orderby@ page_num=@page_num@>
+       <include src="../lib/evaluations-chunk" grade_id="@grades.grade_id;literal@" grade_item_id="@grades.grade_item_id;literal@" evaluations_orderby="@evaluations_orderby;literal@" page_num="@page_num;literal@">
       </multiple>
 
      <if @admin_p@ eq "0" and @one_instance_p@ eq "1">
