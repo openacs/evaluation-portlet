@@ -40,3 +40,9 @@ set notification_chunk [notification::display::request_widget \
 			    -url "[ad_conn url]?[ns_conn query]" \
 			   ]
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

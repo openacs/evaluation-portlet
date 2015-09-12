@@ -1070,3 +1070,9 @@ ad_proc evaluation::twt::add_assignement_type { class_material_url assigment_typ
 
 }
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
