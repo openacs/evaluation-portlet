@@ -21,7 +21,7 @@ ad_proc evaluation::twt::create_file {file_name}  {
 ad_proc evaluation::twt::delete_file {file_name}  {
 
     # Delete a file name 
-    exec rm -rf  $file_name
+    file delete -force -- $file_name
 }
 
 ad_proc evaluation::twt::get_notification_ids { pretty_name } {
