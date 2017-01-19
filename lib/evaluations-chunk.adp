@@ -1,4 +1,4 @@
-<if @simple_p@ eq 1>
+<if @simple_p;literal@ true>
 <div id="evaluations">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
@@ -12,8 +12,8 @@
 </if>
 
 <listtemplate name="grade_tasks_@grade_id@"></listtemplate>
-<if @simple_p@ eq 0>
- <if @admin_p@ eq 1>
+<if @simple_p;literal@ false>
+ <if @admin_p;literal@ true>
    #evaluation.lt_Weight_used_in_grade_#
  </if>
  <else>
