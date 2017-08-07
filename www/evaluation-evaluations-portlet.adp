@@ -1,8 +1,8 @@
 
-  <if @shaded_p@ false>
+  <if @shaded_p;literal@ false>
    <ul>
-    <if @admin_p@ eq 1>
-     <if @simple_p@ eq 1>
+    <if @admin_p;literal@ true>
+     <if @simple_p;literal@ true>
       <li><a href="evaluation/admin/grades/grades" title="#evaluation-portlet.lt_Admin_my_Asignment_T#">#evaluation-portlet.lt_Admin_my_Assignment_T#</a> (#evaluation-portlet.admin_help#)</li>
       <li><a href="evaluation/admin/grades/grades-reports" title="#evaluation-portlet.view_students_grades#">#evaluation-portlet.view_students_grades#</a> (#evaluation-portlet.view_grades_help#)</li>
      </if>
@@ -18,7 +18,7 @@
     </if>
     <else>
       <multiple name="grades">
-       <if @simple_p@ eq 0>
+       <if @simple_p;literal@ false>
         <h2>@grades.grade_plural_name;noquote@</h2>
        </if> 
        <include src="../lib/evaluations-chunk" grade_id="@grades.grade_id;literal@" grade_item_id="@grades.grade_item_id;literal@" evaluations_orderby="@evaluations_orderby;literal@" page_num="@page_num;literal@">

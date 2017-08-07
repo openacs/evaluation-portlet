@@ -1,5 +1,5 @@
 
-  <if @shaded_p@ false>
+  <if @shaded_p;literal@ false>
     <p>@notification_chunk;noquote@</p>
 
     <if @grades:rowcount@ eq 0>

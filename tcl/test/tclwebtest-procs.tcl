@@ -21,7 +21,7 @@ ad_proc evaluation::twt::create_file {file_name}  {
 ad_proc evaluation::twt::delete_file {file_name}  {
 
     # Delete a file name 
-    exec rm -rf  $file_name
+    file delete -force -- $file_name
 }
 
 ad_proc evaluation::twt::get_notification_ids { pretty_name } {
@@ -1070,3 +1070,9 @@ ad_proc evaluation::twt::add_assignement_type { class_material_url assigment_typ
 
 }
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
