@@ -1058,7 +1058,7 @@ ad_proc evaluation::twt::add_assignement_type { class_material_url assigment_typ
         
 	    aa_error  "evaluation::twt::add_assignement_type failed $errmsg : Didn't add a new assignement type"
         } else {
-            aa_log "Add a new Assignement Type"
+            aa_log "Add a new Assignment Type"
             set response 1
         }
 

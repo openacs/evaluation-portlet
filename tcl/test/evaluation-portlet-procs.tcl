@@ -846,7 +846,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
 
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignement_type {
 
-        Test Add a new Assignement Type. 
+        Test Add a new Assignment Type. 
 
         @author Mounir Lallali
 } {
