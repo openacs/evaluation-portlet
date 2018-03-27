@@ -1026,7 +1026,7 @@ ad_proc evaluation::twt::unsubscribe_Evaluation { class_material_url type_id obj
     return $response
 }
 
-ad_proc evaluation::twt::add_assignement_type { class_material_url assigment_type_name} {
+ad_proc evaluation::twt::add_assignment_type { class_material_url assigment_type_name} {
 
     set response 0
 
@@ -1056,14 +1056,14 @@ ad_proc evaluation::twt::add_assignement_type { class_material_url assigment_typ
 
 	if {[catch {tclwebtest::assert text "$assigment_type_name" } errmsg]} {
         
-	    aa_error  "evaluation::twt::add_assignement_type failed $errmsg : Didn't add a new assignement type"
+	    aa_error  "evaluation::twt::add_assignment_type failed $errmsg : Didn't add a new assignment type"
         } else {
             aa_log "Add a new Assignment Type"
             set response 1
         }
 
     } else {
-        aa_error "evaluation::twt::::add_assignement_type failed, bad response url : $response_url"
+        aa_error "evaluation::twt::::add_assignment_type failed, bad response url : $response_url"
     }
 
     return $response

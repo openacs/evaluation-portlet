@@ -844,7 +844,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
         }
 }
 
-aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignement_type {
+aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignment_type {
 
         Test Add a new Assignment Type. 
 
@@ -862,7 +862,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignem
 	   
 	    # Add a new assignment type
 	    set assigment_type_name  [ad_generate_random_string]
-	    set response [evaluation::twt::add_assignement_type $class_material_url $assigment_type_name]  
+	    set response [evaluation::twt::add_assignment_type $class_material_url $assigment_type_name]  
 	    aa_display_result -response $response -explanation {additing a new assignment type}
 
             twt::user::logout
