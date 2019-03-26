@@ -31,14 +31,16 @@ ad_proc -private evaluation_assignments_portlet::my_package_key {
 
 
 
-ad_proc -public evaluation_assignments_portlet::get_pretty_name {
+ad_proc -public evaluation_assignments_portlet::get_pretty_name {} {
+    Get portlet pretty name
 } {
     return "#evaluation-portlet.Assignments#"
 }
 
 
 
-ad_proc -public evaluation_assignments_portlet::link {
+ad_proc -public evaluation_assignments_portlet::link {} {
+    Get portlet link
 } {
     return ""
 }
@@ -93,6 +95,8 @@ ad_proc -public evaluation_assignments_portlet::remove_self_from_page {
 ad_proc -public evaluation_assignments_portlet::show {
     cf
 } {
+    Show portlet
+} {
     portal::show_proc_helper \
         -package_key [my_package_key] \
         -config_list $cf \
@@ -118,14 +122,16 @@ ad_proc -private evaluation_evaluations_portlet::my_package_key {
 
 
 
-ad_proc -public evaluation_evaluations_portlet::get_pretty_name {
+ad_proc -public evaluation_evaluations_portlet::get_pretty_name {} {
+    Get portlet pretty name
 } {
     return "#evaluation-portlet.Evaluations_#"
 }
 
 
 
-ad_proc -public evaluation_evaluations_portlet::link {
+ad_proc -public evaluation_evaluations_portlet::link {} {
+    Get portlet link
 } {
     return ""
 }
@@ -181,6 +187,8 @@ ad_proc -public evaluation_evaluations_portlet::remove_self_from_page {
 ad_proc -public evaluation_evaluations_portlet::show {
     cf
 } {
+    Show portlet
+} {
     portal::show_proc_helper \
         -package_key [my_package_key] \
         -config_list $cf \
@@ -193,6 +201,8 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
+    Get portlet pretty name
+} {
     return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
@@ -205,6 +215,8 @@ ad_proc -private evaluation_admin_portlet::my_package_key {} {
 
 
 ad_proc -public evaluation_admin_portlet::link {} {
+    Get portlet link
+} {
     return ""
 }
 
@@ -247,6 +259,7 @@ ad_proc -public evaluation_admin_portlet::remove_self_from_page {
 ad_proc -public evaluation_admin_portlet::show {
     cf
 } {
+    Show portlet
 } {
     portal::show_proc_helper \
         -package_key [my_package_key] \
@@ -267,6 +280,8 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 
 
 ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
+    Get portlet pretty name
+} {
     return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
 
@@ -279,6 +294,8 @@ ad_proc -private evaluation_admin_portlet::my_package_key {} {
 
 
 ad_proc -public evaluation_admin_portlet::link {} {
+    Get portlet link
+} {
     return ""
 }
 
@@ -321,6 +338,7 @@ ad_proc -public evaluation_admin_portlet::remove_self_from_page {
 ad_proc -public evaluation_admin_portlet::show {
     cf
 } {
+    Show portlet
 } {
     portal::show_proc_helper \
         -package_key [my_package_key] \
