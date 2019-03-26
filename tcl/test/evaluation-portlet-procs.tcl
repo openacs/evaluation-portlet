@@ -13,25 +13,25 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_task {
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-	    
+
 	    tclwebtest::cookies clear
 
 	    # Login user
  	    array set user_info [twt::user::create -admin]
 	    twt::user::login $user_info(email) $user_info(password)
-	    
+
 	    # Get the class material url
 	    set class_material_url [evaluation::twt::get_evaluation_url]
-	    
-	    # Add a new task to GradeBook 
+
+	    # Add a new task to GradeBook
 	    set task_name [ad_generate_random_string]
 	    set associated_file_name [evaluation::twt::create_file [ad_generate_random_string]]
 	    set task_description [ad_generate_random_string]
 	    set response [evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name]
 	    aa_display_result -response $response -explanation {for additing a new Task to GradeBook}
-	    
-	    evaluation::twt::delete_file $associated_file_name 
-	    
+
+	    evaluation::twt::delete_file $associated_file_name
+
 	    twt::user::logout
 	}
 }
@@ -43,7 +43,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_task_
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-	    	    
+
 	    tclwebtest::cookies clear
 
             # Login user
@@ -58,12 +58,12 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_task_
             set task_description [ad_generate_random_string]
 	    set associated_file_name [evaluation::twt::create_file [ad_generate_random_string]]
             evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name
-	    
+
 	    # Upload a task solution to GradeBook
 	    set uploaded_file_name [evaluation::twt::create_file [ad_generate_random_string]]
             set response [evaluation::twt::upload_task_solution $class_material_url $task_name $uploaded_file_name]
             aa_display_result -response $response -explanation {for uploading task solution in GradeBook}
-	    
+
 	    evaluation::twt::delete_file $associated_file_name
 	    evaluation::twt::delete_file $uploaded_file_name
 
@@ -78,7 +78,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_task_so
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-            
+
             tclwebtest::cookies clear
 
             # Login user
@@ -99,9 +99,9 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_task_so
             evaluation::twt::upload_task_solution $class_material_url $task_name $uploaded_file_name
 
 	    # View a task solution in GradeBook
-	    set response [evaluation::twt::view_task_solution $class_material_url $task_name $uploaded_file_name] 
+	    set response [evaluation::twt::view_task_solution $class_material_url $task_name $uploaded_file_name]
             aa_display_result -response $response -explanation {for viewing task solution in GradeBook}
-	                
+
 	    evaluation::twt::delete_file $associated_file_name
             evaluation::twt::delete_file $uploaded_file_name
 
@@ -171,13 +171,13 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_task {
             set associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
             set task_description [ad_generate_random_string]
             evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name
-	   
+
             # view a task in GradeBook
             set response [evaluation::twt::view_task $class_material_url $task_name $task_description $associated_file_name]
             aa_display_result -response $response -explanation {for viewing a Task in GradeBook}
-	    
+
 	    evaluation::twt::delete_file $associated_file_name
-	    
+
 	    twt::user::logout
 	}
 }
@@ -203,18 +203,18 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_task {
             set task_name [ad_generate_random_string]
             set associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
             set task_description [ad_generate_random_string]
-            evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name 
-            
+            evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name
+
 	    # edit a task in GradeBook
 	    set new_task_name [ad_generate_random_string]
             set new_associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
             set new_task_description [ad_generate_random_string]
             set response [evaluation::twt::edit_task $class_material_url $task_name $new_task_name $new_task_description $new_associated_file_name ]
             aa_display_result -response $response -explanation {for editing a Task in GradeBook}
-	    
+
 	    evaluation::twt::delete_file $associated_file_name
 	    evaluation::twt::delete_file $new_associated_file_name
-	    
+
 	    twt::user::logout
 	}
 }
@@ -241,11 +241,11 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_task 
             set associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
             set task_description [ad_generate_random_string]
             evaluation::twt::add_task $class_material_url $task_name $task_description $associated_file_name
-	    
+
 	    # delete a task in GradeBook
             set response [evaluation::twt::delete_task $class_material_url $task_name]
 	    aa_display_result -response $response -explanation {for deleting a Task in GradeBook}
-        
+
 	    evaluation::twt::delete_file $associated_file_name
 
 	    twt::user::logout
@@ -254,7 +254,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_task 
 
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_project {
 
-        Test Add a Project to GradeBook. 
+        Test Add a Project to GradeBook.
 
         @author Mounir Lallali
 } {
@@ -273,8 +273,8 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_project 
 	    set project_name [ad_generate_random_string]
             set associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
 	    set project_description [ad_generate_random_string]
-	    
-	    set response [evaluation::twt::add_project $class_material_url $project_name $project_description $associated_file_name] 
+
+	    set response [evaluation::twt::add_project $class_material_url $project_name $project_description $associated_file_name]
 	    aa_display_result -response $response -explanation {for additing a new Project to GradeBook}
 
 	    evaluation::twt::delete_file $associated_file_name
@@ -363,7 +363,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_project
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-	    
+
             tclwebtest::cookies clear
 
             # Login user
@@ -494,7 +494,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_proje
             aa_display_result -response $response -explanation {for deleting a Project in GradeBook}
 
 	    evaluation::twt::delete_file $associated_file_name
-            
+
             twt::user::logout
         }
 }
@@ -525,7 +525,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_exam {
             aa_display_result -response $response -explanation {for additing a new Exam to GradeBook}
 
 	    evaluation::twt::delete_file $associated_file_name
-	    
+
 	    twt::user::logout
         }
     }
@@ -561,7 +561,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_exam_
 
             evaluation::twt::delete_file $associated_file_name
             evaluation::twt::delete_file $uploaded_file_name
-            
+
 	    twt::user::logout
         }
 }
@@ -673,11 +673,11 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_exam {
             aa_display_result -response $response -explanation {for viewing an exam in GradeBook}
 
 	    evaluation::twt::delete_file $associated_file_name
-            
+
             twt::user::logout
 	}
 }
-     
+
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_exam {
 
         Test Edit an Exam in GradeBook.
@@ -710,7 +710,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_exam {
 
 	    evaluation::twt::delete_file $associated_file_name
 	    evaluation::twt::delete_file $new_associated_file_name
-            
+
 	    twt::user::logout
         }
 }
@@ -743,7 +743,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_exam 
             aa_display_result -response $response -explanation {for deleting an Exam in GradeBook}
 
 	    evaluation::twt::delete_file $associated_file_name
-	    
+
 	    twt::user::logout
         }
 }
@@ -755,9 +755,9 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_request_noti
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-	    
+
 	    tclwebtest::cookies clear
-            
+
 	    # Login user
             array set user_info [twt::user::create -admin]
             twt::user::login $user_info(email) $user_info(password)
@@ -789,7 +789,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_request_noti
 	    set responses [evaluation::twt::request_notification_Evaluation $class_material_url]
 	    aa_display_result -response [lindex $responses 3] -explanation {for requesting a notification Evaluation}
 
-            twt::user::logout	    
+            twt::user::logout
         }
 }
 
@@ -806,11 +806,11 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
             # Login user
             array set user_info [twt::user::create -admin]
             twt::user::login $user_info(email) $user_info(password)
-	    
+
 	    # Unsubscribe a notification GradeBook
 	    set class_material_url [evaluation::twt::get_evaluation_url]
 	    set list_ids [evaluation::twt::request_notification_GradeBook $class_material_url]
-	    
+
 	    set response [evaluation::twt::unsubscribe_GradeBook $class_material_url [lindex $list_ids 0] [lindex $list_ids 1] [lindex $list_ids 2]]
             aa_display_result -response $response -explanation {unsubscribing a notification GradeBook}
 
@@ -825,18 +825,18 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
         @author Mounir Lallali
 } {
         aa_run_with_teardown -test_code {
-            
+
 
 	    tclwebtest::cookies clear
 
             # Login user
 	    array set user_info [twt::user::create -admin]
             twt::user::login $user_info(email) $user_info(password)
-			
+
 	    # Unsubscribing a notification Evaluation
 	    set class_material_url [evaluation::twt::get_evaluation_url]
 	    set list_ids [evaluation::twt::request_notification_Evaluation $class_material_url]
-	    
+
 	    set response [evaluation::twt::unsubscribe_Evaluation $class_material_url [lindex $list_ids 0] [lindex $list_ids 1] [lindex $list_ids 2]]
             aa_display_result -response $response -explanation {unsubscribing a notification Evaluation}
 
@@ -846,7 +846,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
 
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignment_type {
 
-        Test Add a new Assignment Type. 
+        Test Add a new Assignment Type.
 
         @author Mounir Lallali
 } {
@@ -857,12 +857,12 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignme
             # Login user
             array set user_info [twt::user::create -admin]
             twt::user::login $user_info(email) $user_info(password)
-	    
+
             set class_material_url [evaluation::twt::get_evaluation_url]
-	   
+
 	    # Add a new assignment type
 	    set assigment_type_name  [ad_generate_random_string]
-	    set response [evaluation::twt::add_assignment_type $class_material_url $assigment_type_name]  
+	    set response [evaluation::twt::add_assignment_type $class_material_url $assigment_type_name]
 	    aa_display_result -response $response -explanation {additing a new assignment type}
 
             twt::user::logout
