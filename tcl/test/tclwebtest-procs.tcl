@@ -8,7 +8,7 @@ ad_library {
 
 namespace eval evaluation::twt {}
 
-ad_proc evaluation::twt::create_file {file_name}  {
+ad_proc -private evaluation::twt::create_file {file_name}  {
 
     # Create a temporal file
     set file_name "/tmp/$file_name"
@@ -18,13 +18,13 @@ ad_proc evaluation::twt::create_file {file_name}  {
     return $file_name
 }
 
-ad_proc evaluation::twt::delete_file {file_name}  {
+ad_proc -private evaluation::twt::delete_file {file_name}  {
 
     # Delete a file name
     file delete -force -- $file_name
 }
 
-ad_proc evaluation::twt::get_notification_ids { pretty_name } {
+ad_proc -private evaluation::twt::get_notification_ids { pretty_name } {
 
     # Get the notification ids : type_id, object_id and user_id
     set link [lindex [tclwebtest::link find ~u "(.+)request-new\?(.*)pretty(.+)name=$pretty_name\(.+)"] 7]
@@ -36,7 +36,7 @@ ad_proc evaluation::twt::get_notification_ids { pretty_name } {
     return [list $type_id $object_id $user_id]
 }
 
-ad_proc evaluation::twt::get_task_grade_id { task_name } {
+ad_proc -private evaluation::twt::get_task_grade_id { task_name } {
 
     db_1row task_id "select task_id from evaluation_tasks where task_name=:task_name"
     db_1row grade_item_id "select grade_item_id from evaluation_tasks where task_name=:task_name"
@@ -45,7 +45,7 @@ ad_proc evaluation::twt::get_task_grade_id { task_name } {
     return [list $task_id $grade_id]
 }
 
-ad_proc evaluation::twt::get_evaluation_url {} {
+ad_proc -private evaluation::twt::get_evaluation_url {} {
 
     # The admin dotlrn page url
     set dotlrn_page_url [site_node::get_package_url -package_key dotlrn]
@@ -86,7 +86,7 @@ ad_proc evaluation::twt::get_evaluation_url {} {
     return $class_material_url
 }
 
-ad_proc evaluation::twt::add_task { class_material_url task_name task_description file_name } {
+ad_proc -private evaluation::twt::add_task { class_material_url task_name task_description file_name } {
 
     set response 0
 
@@ -121,7 +121,7 @@ ad_proc evaluation::twt::add_task { class_material_url task_name task_descriptio
     return $response
 }
 
-ad_proc evaluation::twt::upload_task_solution { class_material_url task_name file_name} {
+ad_proc -private evaluation::twt::upload_task_solution { class_material_url task_name file_name} {
 
     set response 0
 
@@ -160,7 +160,7 @@ ad_proc evaluation::twt::upload_task_solution { class_material_url task_name fil
     return $response
 }
 
-ad_proc evaluation::twt::view_task_solution { class_material_url task_name file_name } {
+ad_proc -private evaluation::twt::view_task_solution { class_material_url task_name file_name } {
 
     set response 0
 
@@ -195,7 +195,7 @@ ad_proc evaluation::twt::view_task_solution { class_material_url task_name file_
     return $response
 }
 
-ad_proc evaluation::twt::edit_task_solution { class_material_url task_name file_name } {
+ad_proc -private evaluation::twt::edit_task_solution { class_material_url task_name file_name } {
 
     set response 0
 
@@ -236,7 +236,7 @@ ad_proc evaluation::twt::edit_task_solution { class_material_url task_name file_
     return $response
 }
 
-ad_proc evaluation::twt::view_task { class_material_url task_name task_description file_name} {
+ad_proc -private evaluation::twt::view_task { class_material_url task_name task_description file_name} {
 
     set response 0
 
@@ -273,7 +273,7 @@ ad_proc evaluation::twt::view_task { class_material_url task_name task_descripti
     return $response
 }
 
-ad_proc evaluation::twt::edit_task { class_material_url precedent_task_name task_name task_description file_name } {
+ad_proc -private evaluation::twt::edit_task { class_material_url precedent_task_name task_name task_description file_name } {
 
     set response 0
 
@@ -322,7 +322,7 @@ ad_proc evaluation::twt::edit_task { class_material_url precedent_task_name task
     return $response
 }
 
-ad_proc evaluation::twt::delete_task { class_material_url task_name } {
+ad_proc -private evaluation::twt::delete_task { class_material_url task_name } {
 
     set response 0
 
@@ -358,7 +358,7 @@ ad_proc evaluation::twt::delete_task { class_material_url task_name } {
 }
 
 
-ad_proc evaluation::twt::add_project { class_material_url project_name project_description file_name } {
+ad_proc -private evaluation::twt::add_project { class_material_url project_name project_description file_name } {
 
     set response 0
 
@@ -392,7 +392,7 @@ ad_proc evaluation::twt::add_project { class_material_url project_name project_d
     return $response
 }
 
-ad_proc evaluation::twt::upload_project_solution { class_material_url project_name file_name } {
+ad_proc -private evaluation::twt::upload_project_solution { class_material_url project_name file_name } {
 
     set response 0
 
@@ -431,7 +431,7 @@ ad_proc evaluation::twt::upload_project_solution { class_material_url project_na
     return $response
 }
 
-ad_proc evaluation::twt::view_project_solution { class_material_url project_name file_name } {
+ad_proc -private evaluation::twt::view_project_solution { class_material_url project_name file_name } {
 
     set response 0
 
@@ -466,7 +466,7 @@ ad_proc evaluation::twt::view_project_solution { class_material_url project_name
     return $response
 }
 
-ad_proc evaluation::twt::edit_project_solution { class_material_url project_name file_name } {
+ad_proc -private evaluation::twt::edit_project_solution { class_material_url project_name file_name } {
 
     set response 0
 
@@ -507,7 +507,7 @@ ad_proc evaluation::twt::edit_project_solution { class_material_url project_name
     return $response
 }
 
-ad_proc evaluation::twt::view_project { class_material_url project_name project_description file_name} {
+ad_proc -private evaluation::twt::view_project { class_material_url project_name project_description file_name} {
 
     set response 0
 
@@ -544,7 +544,7 @@ ad_proc evaluation::twt::view_project { class_material_url project_name project_
     return $response
 }
 
-ad_proc evaluation::twt::edit_project { class_material_url precedent_project_name project_name project_description file_name } {
+ad_proc -private evaluation::twt::edit_project { class_material_url precedent_project_name project_name project_description file_name } {
 
     set response 0
 
@@ -594,7 +594,7 @@ ad_proc evaluation::twt::edit_project { class_material_url precedent_project_nam
     return $response
 }
 
-ad_proc evaluation::twt::delete_project { class_material_url project_name } {
+ad_proc -private evaluation::twt::delete_project { class_material_url project_name } {
 
     set response 0
 
@@ -629,7 +629,7 @@ ad_proc evaluation::twt::delete_project { class_material_url project_name } {
     return $response
 }
 
-ad_proc evaluation::twt::add_exam { class_material_url exam_name exam_description file_name } {
+ad_proc -private evaluation::twt::add_exam { class_material_url exam_name exam_description file_name } {
 
     set response 0
 
@@ -664,7 +664,7 @@ ad_proc evaluation::twt::add_exam { class_material_url exam_name exam_descriptio
     return $response
 }
 
-ad_proc evaluation::twt::upload_exam_solution { class_material_url exam_name file_name} {
+ad_proc -private evaluation::twt::upload_exam_solution { class_material_url exam_name file_name} {
 
     set response 0
 
@@ -703,7 +703,7 @@ ad_proc evaluation::twt::upload_exam_solution { class_material_url exam_name fil
     return $response
 }
 
-ad_proc evaluation::twt::view_exam_solution { class_material_url exam_name file_name } {
+ad_proc -private evaluation::twt::view_exam_solution { class_material_url exam_name file_name } {
 
     set response 0
 
@@ -738,7 +738,7 @@ ad_proc evaluation::twt::view_exam_solution { class_material_url exam_name file_
     return $response
 }
 
-ad_proc evaluation::twt::edit_exam_solution { class_material_url exam_name file_name } {
+ad_proc -private evaluation::twt::edit_exam_solution { class_material_url exam_name file_name } {
 
     set response 0
 
@@ -779,7 +779,7 @@ ad_proc evaluation::twt::edit_exam_solution { class_material_url exam_name file_
     return $response
 }
 
-ad_proc evaluation::twt::view_exam { class_material_url exam_name exam_description file_name} {
+ad_proc -private evaluation::twt::view_exam { class_material_url exam_name exam_description file_name} {
 
     set response 0
 
@@ -816,7 +816,7 @@ ad_proc evaluation::twt::view_exam { class_material_url exam_name exam_descripti
     return $response
 }
 
-ad_proc evaluation::twt::edit_exam { class_material_url precedent_exam_name exam_name exam_description file_name } {
+ad_proc -private evaluation::twt::edit_exam { class_material_url precedent_exam_name exam_name exam_description file_name } {
 
     set response 0
 
@@ -867,7 +867,7 @@ ad_proc evaluation::twt::edit_exam { class_material_url precedent_exam_name exam
 }
 
 
-ad_proc evaluation::twt::delete_exam { class_material_url exam_name } {
+ad_proc -private evaluation::twt::delete_exam { class_material_url exam_name } {
 
     set response 0
 
@@ -903,7 +903,7 @@ ad_proc evaluation::twt::delete_exam { class_material_url exam_name } {
 }
 
 
-ad_proc evaluation::twt::request_notification_Evaluation { class_material_url } {
+ad_proc -private evaluation::twt::request_notification_Evaluation { class_material_url } {
 
     set response 0
 
@@ -935,7 +935,7 @@ ad_proc evaluation::twt::request_notification_Evaluation { class_material_url } 
     return [lappend list_ids $response]
 }
 
-ad_proc evaluation::twt::request_notification_GradeBook { class_material_url } {
+ad_proc -private evaluation::twt::request_notification_GradeBook { class_material_url } {
     set response 0
 
     ::twt::do_request $class_material_url
@@ -967,7 +967,7 @@ ad_proc evaluation::twt::request_notification_GradeBook { class_material_url } {
 
 }
 
-ad_proc evaluation::twt::unsubscribe_GradeBook { class_material_url type_id object_id user_id} {
+ad_proc -private evaluation::twt::unsubscribe_GradeBook { class_material_url type_id object_id user_id} {
 
     set response 0
 
@@ -997,7 +997,7 @@ ad_proc evaluation::twt::unsubscribe_GradeBook { class_material_url type_id obje
     return $response
 }
 
-ad_proc evaluation::twt::unsubscribe_Evaluation { class_material_url type_id object_id user_id } {
+ad_proc -private evaluation::twt::unsubscribe_Evaluation { class_material_url type_id object_id user_id } {
 
     set response 0
 
@@ -1026,7 +1026,7 @@ ad_proc evaluation::twt::unsubscribe_Evaluation { class_material_url type_id obj
     return $response
 }
 
-ad_proc evaluation::twt::add_assignment_type { class_material_url assigment_type_name} {
+ad_proc -private evaluation::twt::add_assignment_type { class_material_url assigment_type_name} {
 
     set response 0
 
