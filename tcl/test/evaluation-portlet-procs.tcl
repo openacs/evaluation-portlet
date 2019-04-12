@@ -695,7 +695,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_exam {
             # Get the class material url
             set class_material_url [evaluation::twt::get_evaluation_url]
 
-            # Add an new exam to GradeBook
+            # Add a new exam to GradeBook
             set exam_name [ad_generate_random_string]
             set associated_file_name  [evaluation::twt::create_file [ad_generate_random_string]]
             set exam_description [ad_generate_random_string]

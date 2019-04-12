@@ -69,7 +69,7 @@ ad_proc -private evaluation::twt::get_evaluation_url {} {
     tclwebtest::field find ~n class_instance_key
     tclwebtest::field fill [ad_generate_random_string]
     tclwebtest::form submit
-    aa_log "Add Class Form submited"
+    aa_log "Add Class Form submitted"
 
     tclwebtest::link follow $pretty_name
 
@@ -101,7 +101,7 @@ ad_proc -private evaluation::twt::add_task { class_material_url task_name task_d
     tclwebtest::field find ~n "description"
     tclwebtest::field fill $task_description
     tclwebtest::form submit
-    aa_log "Add Task form submited"
+    aa_log "Add Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -140,7 +140,7 @@ ad_proc -private evaluation::twt::upload_task_solution { class_material_url task
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
 
-    aa_log "Add Task form submited"
+    aa_log "Add Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -216,7 +216,7 @@ ad_proc -private evaluation::twt::edit_task_solution { class_material_url task_n
     tclwebtest::field find ~n "upload_file"
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -298,7 +298,7 @@ ad_proc -private evaluation::twt::edit_task { class_material_url precedent_task_
     tclwebtest::field find ~n "description"
     tclwebtest::field fill $task_description
     tclwebtest::form submit ~n "formbutton:ok"
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -372,7 +372,7 @@ ad_proc -private evaluation::twt::add_project { class_material_url project_name 
     tclwebtest::field find ~n "description"
     tclwebtest::field fill $project_description
     tclwebtest::form submit
-    aa_log "Add Task form submited"
+    aa_log "Add Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -411,7 +411,7 @@ ad_proc -private evaluation::twt::upload_project_solution { class_material_url p
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
 
-    aa_log "Add Task form submited"
+    aa_log "Add Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -487,7 +487,7 @@ ad_proc -private evaluation::twt::edit_project_solution { class_material_url pro
     tclwebtest::field find ~n "upload_file"
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -570,7 +570,7 @@ ad_proc -private evaluation::twt::edit_project { class_material_url precedent_pr
     tclwebtest::field fill $project_description
     tclwebtest::form submit
 
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -643,7 +643,7 @@ ad_proc -private evaluation::twt::add_exam { class_material_url exam_name exam_d
     tclwebtest::field find ~n "description"
     tclwebtest::field fill $exam_description
     tclwebtest::form submit
-    aa_log "Add Exam form submited"
+    aa_log "Add Exam form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -683,7 +683,7 @@ ad_proc -private evaluation::twt::upload_exam_solution { class_material_url exam
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
 
-    aa_log "Add Task form submited"
+    aa_log "Add Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -759,7 +759,7 @@ ad_proc -private evaluation::twt::edit_exam_solution { class_material_url exam_n
     tclwebtest::field find ~n "upload_file"
     tclwebtest::field fill $file_name
     tclwebtest::form submit ~n "formbutton:ok"
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
@@ -842,7 +842,7 @@ ad_proc -private evaluation::twt::edit_exam { class_material_url precedent_exam_
     tclwebtest::field fill $exam_description
     tclwebtest::form submit
 
-    aa_log "Edit Task form submited"
+    aa_log "Edit Task form submitted"
 
     set response_url [tclwebtest::response url]
 
