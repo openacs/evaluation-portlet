@@ -11,7 +11,7 @@ namespace eval evaluation::twt {}
 ad_proc -private evaluation::twt::create_file {file_name}  {
 
     # Create a temporal file
-    set file_name "/tmp/$file_name"
+    set file_name "[ad_tmpdir]/$file_name"
     exec touch $file_name
     exec ls / >> $file_name
     exec chmod 777 $file_name
