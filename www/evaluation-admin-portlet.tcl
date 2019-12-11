@@ -9,7 +9,7 @@ ad_page_contract {
 } -properties {
     
 }
-set return_url [get_referrer]
+set return_url [util::get_referrer]
 array set config $cf
 set user_id [ad_conn user_id]
 set list_of_package_ids $config(package_id)
