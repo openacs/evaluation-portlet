@@ -868,6 +868,22 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignme
             twt::user::logout
         }
 }
+
+aa_register_case -procs {
+        evaluation_admin_portlet::link
+        evaluation_evaluations_portlet::link
+        evaluation_assignments_portlet::link
+    } -cats {
+        api
+        production_safe
+    } evaluation_portlet_links {
+        Test diverse link procs.
+} {
+    aa_equals "Evaluation admin portlet link"       "[evaluation_admin_portlet::link]" ""
+    aa_equals "Evaluation evaluations portlet link" "[evaluation_evaluations_portlet::link]" ""
+    aa_equals "Evaluation assignments portlet link" "[evaluation_assignments_portlet::link]" ""
+}
+
 # Local variables:
 #    mode: tcl
 #    tcl-indent-level: 4
