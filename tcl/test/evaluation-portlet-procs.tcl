@@ -872,15 +872,21 @@ aa_register_case -procs {
         evaluation_admin_portlet::link
         evaluation_evaluations_portlet::link
         evaluation_assignments_portlet::link
+        evaluation_admin_portlet::get_pretty_name
+        evaluation_assignments_portlet::get_pretty_name
+        evaluation_evaluations_portlet::get_pretty_name
     } -cats {
         api
         production_safe
-    } evaluation_portlet_links {
-        Test diverse link procs.
+    } evaluation_portlet_links_names {
+        Test diverse link and name procs.
 } {
-    aa_equals "Evaluation admin portlet link"       "[evaluation_admin_portlet::link]" ""
-    aa_equals "Evaluation evaluations portlet link" "[evaluation_evaluations_portlet::link]" ""
-    aa_equals "Evaluation assignments portlet link" "[evaluation_assignments_portlet::link]" ""
+    aa_equals "Evaluation admin portlet link"               "[evaluation_admin_portlet::link]" ""
+    aa_equals "Evaluation evaluations portlet link"         "[evaluation_evaluations_portlet::link]" ""
+    aa_equals "Evaluation assignments portlet link"         "[evaluation_assignments_portlet::link]" ""
+    aa_equals "Evaluation admin portlet pretty name"        "[evaluation_admin_portlet::get_pretty_name]" "#evaluation-portlet.lt_Evaluation_Administra#"
+    aa_equals "Evaluation evaluations portlet pretty name"  "[evaluation_evaluations_portlet::get_pretty_name]" "#evaluation-portlet.Evaluations_#"
+    aa_equals "Evaluation assignments portlet pretty name"  "[evaluation_assignments_portlet::get_pretty_name]" "#evaluation-portlet.Assignments#"
 }
 
 # Local variables:
