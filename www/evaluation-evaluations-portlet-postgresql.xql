@@ -33,7 +33,7 @@
 
 	( select
 	CASE 
-	  WHEN et3.number_of_members = 1 THEN $user_id
+	  WHEN et3.number_of_members = 1 THEN :user_id
 	  ELSE 
 	(select etg2.group_id from evaluation_task_groups etg2,
                                                       evaluation_tasks et2,
