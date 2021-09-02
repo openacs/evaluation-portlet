@@ -20,7 +20,7 @@ ad_proc -private evaluation::twt::create_file {file_name}  {
 
 ad_proc -private evaluation::twt::delete_file {file_name}  {
 
-    # Delete a file name
+    # Delete a filename
     file delete -force -- $file_name
 }
 
