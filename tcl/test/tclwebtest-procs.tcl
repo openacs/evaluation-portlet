@@ -929,7 +929,7 @@ ad_proc -private evaluation::twt::request_notification_Evaluation { class_materi
         }
 
     } else {
-        aa_error "evaluation::twt:::request_notification_Evaluation failed, bad response url : $response_url"
+        aa_error "evaluation::twt::request_notification_Evaluation failed, bad response url : $response_url"
     }
 
     return [lappend list_ids $response]
@@ -960,7 +960,7 @@ ad_proc -private evaluation::twt::request_notification_GradeBook { class_materia
         }
 
     } else {
-        aa_error "evaluation::twt:::request_notification_GradeBook failed, bad response url : $response_url"
+        aa_error "evaluation::twt::request_notification_GradeBook failed, bad response url : $response_url"
     }
 
     return [lappend list_ids $response]
@@ -991,7 +991,7 @@ ad_proc -private evaluation::twt::unsubscribe_GradeBook { class_material_url typ
         }
 
     } else {
-        aa_error "evaluation::twt::::unsubscribe_GradeBook failed, bad response url : $response_url"
+        aa_error "evaluation::twt::unsubscribe_GradeBook failed, bad response url : $response_url"
     }
 
     return $response
@@ -1020,7 +1020,7 @@ ad_proc -private evaluation::twt::unsubscribe_Evaluation { class_material_url ty
             set response 1
         }
     } else {
-        aa_error "evaluation::twt::::unsubscribe_Evaluation failed, bad response url : $response_url"
+        aa_error "evaluation::twt::unsubscribe_Evaluation failed, bad response url : $response_url"
     }
 
     return $response
@@ -1063,7 +1063,7 @@ ad_proc -private evaluation::twt::add_assignment_type { class_material_url assig
         }
 
     } else {
-        aa_error "evaluation::twt::::add_assignment_type failed, bad response url : $response_url"
+        aa_error "evaluation::twt::add_assignment_type failed, bad response url : $response_url"
     }
 
     return $response
