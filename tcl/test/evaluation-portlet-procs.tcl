@@ -17,7 +17,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_task {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -47,7 +47,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_task_
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -82,7 +82,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_task_so
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -120,7 +120,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_task_so
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -160,7 +160,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_task {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -193,7 +193,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_task {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -230,7 +230,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_task 
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -263,7 +263,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_project 
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -294,7 +294,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_proje
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -329,7 +329,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_project
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -367,7 +367,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_project
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -407,7 +407,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_project
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -440,7 +440,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_project
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -477,7 +477,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_proje
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -510,7 +510,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_exam {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -542,7 +542,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_upload_exam_
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -577,7 +577,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_exam_so
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -615,7 +615,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_exam_so
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -656,7 +656,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_view_exam {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -689,7 +689,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_exam {
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -726,7 +726,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_exam 
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Get the class material url
@@ -759,7 +759,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_request_noti
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Request a notification GradeBook
@@ -782,7 +782,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_request_noti
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         set class_material_url [evaluation::twt::get_evaluation_url]
@@ -804,7 +804,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Unsubscribe a notification GradeBook
@@ -829,7 +829,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_unsubscribe_
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         # Unsubscribing a notification Evaluation
@@ -854,7 +854,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_assignme
         tclwebtest::cookies clear
 
         # Login user
-        array set user_info [twt::user::create -admin]
+        array set user_info [acs::test::user::create -admin]
         twt::user::login $user_info(email) $user_info(password)
 
         set class_material_url [evaluation::twt::get_evaluation_url]
