@@ -6,6 +6,48 @@ ad_library {
 
 }
 
+aa_register_case -procs {
+    evaluation_admin_portlet::show
+    evaluation_assignments_portlet::show
+    evaluation_evaluations_portlet::show
+} -cats {
+    api
+    smoke
+} render_portlet {
+    Test the rendering of the portlets
+} {
+    aa_run_with_teardown -rollback -test_code {
+        set package_id [site_node::instantiate_and_mount \
+                            -package_key evaluation \
+                            -node_name __test_evaluation_portlet]
+
+        set cf [list \
+                    package_id $package_id \
+                    shaded_p false \
+                   ]
+
+        foreach portlet {
+            evaluation_admin_portlet evaluation_assignments_portlet evaluation_evaluations_portlet
+        } {
+            aa_section $portlet
+
+            set portlet [acs_sc::invoke \
+                             -contract portal_datasource \
+                             -operation Show \
+                             -impl $portlet \
+                             -call_args [list $cf]]
+
+            aa_log "Portlet returns: [ns_quotehtml $portlet]"
+
+            aa_false "No error was returned" {
+                [string first "Error in include template" $portlet] >= 0
+            }
+
+            aa_true "Portlet looks like HTML" [ad_looks_like_html_p $portlet]
+        }
+    }
+}
+
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_add_task {
 
     Test Add a Task to GradeBook.
