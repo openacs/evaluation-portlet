@@ -12,9 +12,9 @@ ad_proc -private evaluation::twt::create_file {file_name}  {
 
     # Create a temporal file
     set file_name "[ad_tmpdir]/$file_name"
-    exec touch $file_name
-    exec ls / >> $file_name
-    exec chmod 777 $file_name
+    exec [::util::which touch] $file_name
+    exec [::util::which ls] / >> $file_name
+    exec [::util::which chmod[ 777 $file_name
     return $file_name
 }
 
