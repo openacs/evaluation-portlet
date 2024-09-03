@@ -31,18 +31,16 @@ ad_proc -private evaluation_assignments_portlet::my_package_key {
 
 
 
-ad_proc -public evaluation_assignments_portlet::get_pretty_name {
-} {
-    Get the pretty name.
+ad_proc -public evaluation_assignments_portlet::get_pretty_name {} {
+    Get portlet pretty name
 } {
     return "#evaluation-portlet.Assignments#"
 }
 
 
 
-ad_proc -public evaluation_assignments_portlet::link {
-} {
-    Get the link. This is currently empty.
+ad_proc -public evaluation_assignments_portlet::link {} {
+    Get portlet link
 } {
     return ""
 }
@@ -81,7 +79,7 @@ ad_proc -public evaluation_assignments_portlet::remove_self_from_page {
     {-package_id:required}
 } {
     Removes a evaluation PE from the given page or the package_id of the
-    evaluation package from the portlet if there are others remaining.
+    evaluation package from the portlet if there are others remaining
     
     @param portal_id The page to remove self from
     @param package_id
@@ -97,7 +95,7 @@ ad_proc -public evaluation_assignments_portlet::remove_self_from_page {
 ad_proc -public evaluation_assignments_portlet::show {
     cf
 } {
-    Show the evaluation assignments portlet.
+    Show portlet
 } {
     portal::show_proc_helper \
         -package_key [my_package_key] \
@@ -124,18 +122,16 @@ ad_proc -private evaluation_evaluations_portlet::my_package_key {
 
 
 
-ad_proc -public evaluation_evaluations_portlet::get_pretty_name {
-} {
-    Get the pretty name.
+ad_proc -public evaluation_evaluations_portlet::get_pretty_name {} {
+    Get portlet pretty name
 } {
     return "#evaluation-portlet.Evaluations_#"
 }
 
 
 
-ad_proc -public evaluation_evaluations_portlet::link {
-} {
-    Get the link. This is currently empty.
+ad_proc -public evaluation_evaluations_portlet::link {} {
+    Get portlet link
 } {
     return ""
 }
@@ -175,7 +171,7 @@ ad_proc -public evaluation_evaluations_portlet::remove_self_from_page {
     {-package_id:required}
 } {
     Removes a evaluation PE from the given page or the package_id of the
-    evaluation package from the portlet if there are others remaining.
+    evaluation package from the portlet if there are others remaining
     
     @param portal_id The page to remove self from
     @param package_id
@@ -191,7 +187,7 @@ ad_proc -public evaluation_evaluations_portlet::remove_self_from_page {
 ad_proc -public evaluation_evaluations_portlet::show {
     cf
 } {
-    Show the evaluations portlet.
+    Show portlet
 } {
     portal::show_proc_helper \
         -package_key [my_package_key] \
@@ -204,9 +200,8 @@ ad_proc -private evaluation_admin_portlet::get_my_name {} {
 }
 
 
-ad_proc -public evaluation_admin_portlet::get_pretty_name {
-} {
-    Get the pretty name.
+ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
+    Get portlet pretty name
 } {
     return "#evaluation-portlet.lt_Evaluation_Administra#"
 }
@@ -219,9 +214,8 @@ ad_proc -private evaluation_admin_portlet::my_package_key {} {
 
 
 
-ad_proc -public evaluation_admin_portlet::link {
-} {
-    Get the link. This is currently empty.
+ad_proc -public evaluation_admin_portlet::link {} {
+    Get portlet link
 } {
     return ""
 }
@@ -233,7 +227,7 @@ ad_proc -public evaluation_admin_portlet::add_self_to_page {
     {-page_name ""}
     {-package_id:required}
 } {
-    Adds a evaluation admin PE to the given portal.
+    Adds a evaluation admin PE to the given portal
 
     @param portal_id The page to add self to
     @param package_id The package_id of the evaluation package
@@ -253,7 +247,7 @@ ad_proc -public evaluation_admin_portlet::add_self_to_page {
 ad_proc -public evaluation_admin_portlet::remove_self_from_page {
     {-portal_id:required}
 } {
-    Removes a evaluation admin PE from the given page.
+    Removes a evaluation admin PE from the given page
 } {
     portal::remove_element \
         -portal_id $portal_id \
@@ -265,12 +259,13 @@ ad_proc -public evaluation_admin_portlet::remove_self_from_page {
 ad_proc -public evaluation_admin_portlet::show {
     cf
 } {
-    Show the evaluation admin portlet.
+    Show portlet
 } {
     portal::show_proc_helper \
         -package_key [my_package_key] \
         -config_list $cf \
         -template_src "evaluation-admin-portlet"
+
 }
 
 
@@ -278,6 +273,79 @@ ad_proc -public evaluation_admin_portlet::show {
 #
 # evaluation assignments namespace
 #
+
+ad_proc -private evaluation_admin_portlet::get_my_name {} {
+    return "evaluation_admin_portlet"
+}
+
+
+ad_proc -public evaluation_admin_portlet::get_pretty_name {} {
+    Get portlet pretty name
+} {
+    return "#evaluation-portlet.lt_Evaluation_Administra#"
+}
+
+
+
+ad_proc -private evaluation_admin_portlet::my_package_key {} {
+    return "evaluation-portlet"
+}
+
+
+
+ad_proc -public evaluation_admin_portlet::link {} {
+    Get portlet link
+} {
+    return ""
+}
+
+
+
+ad_proc -public evaluation_admin_portlet::add_self_to_page {
+    {-portal_id:required}
+    {-page_name ""}
+    {-package_id:required}
+} {
+    Adds a evaluation admin PE to the given portal
+
+    @param portal_id The page to add self to
+    @param package_id The package_id of the evaluation package
+
+    @return element_id The new element's id
+} {
+    return [portal::add_element_parameters \
+                -portal_id $portal_id \
+                -portlet_name [get_my_name] \
+                -key package_id \
+                -value $package_id
+           ]
+}
+
+
+
+ad_proc -public evaluation_admin_portlet::remove_self_from_page {
+    {-portal_id:required}
+} {
+    Removes a evaluation admin PE from the given page
+} {
+    portal::remove_element \
+        -portal_id $portal_id \
+        -portlet_name [get_my_name]
+}
+
+
+
+ad_proc -public evaluation_admin_portlet::show {
+    cf
+} {
+    Show portlet
+} {
+    portal::show_proc_helper \
+        -package_key [my_package_key] \
+        -config_list $cf \
+        -template_src "evaluation-admin-portlet"
+
+}
 
 ad_proc -private evaluation_assignments_portlet::after_install {} {
     Create the datasources needed by the evaluation assignments portlet.
@@ -513,7 +581,7 @@ ad_proc -private evaluation_admin_portlet::register_portal_datasource_impl {} {
 }
 
 ad_proc -private evaluation_assignments_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc.
+    Evaluation Portlet package uninstall proc
 } {
     unregister_implementations
     set ds_id [portal::get_datasource_id evaluation_assignments_portlet]
@@ -521,7 +589,7 @@ ad_proc -private evaluation_assignments_portlet::uninstall {} {
 }
 
 ad_proc -private evaluation_evaluations_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc.
+    Evaluation Portlet package uninstall proc
 } {
     unregister_implementations
     set ds_id [portal::get_datasource_id evaluation_evaluations_portlet]
@@ -529,7 +597,7 @@ ad_proc -private evaluation_evaluations_portlet::uninstall {} {
 }
 
 ad_proc -private evaluation_admin_portlet::uninstall {} {
-    Evaluation Portlet package uninstall proc.
+    Evaluation Portlet package uninstall proc
 } {
     unregister_implementations
     set ds_id [portal::get_datasource_id evaluation_admin_portlet]
@@ -537,7 +605,7 @@ ad_proc -private evaluation_admin_portlet::uninstall {} {
 }
 
 ad_proc -private evaluation_assignments_portlet::unregister_implementations {} {
-    Unregister service contract implementations.
+    Unregister service contract implementations
 } {
     acs_sc::impl::delete \
         -contract_name "portal_datasource" \
@@ -545,7 +613,7 @@ ad_proc -private evaluation_assignments_portlet::unregister_implementations {} {
 }
 
 ad_proc -private evaluation_evaluations_portlet::unregister_implementations {} {
-    Unregister service contract implementations.
+    Unregister service contract implementations
 } {
     acs_sc::impl::delete \
         -contract_name "portal_datasource" \
@@ -553,7 +621,7 @@ ad_proc -private evaluation_evaluations_portlet::unregister_implementations {} {
 }
 
 ad_proc -private evaluation_admin_portlet::unregister_implementations {} {
-    Unregister service contract implementations.
+    Unregister service contract implementations
 } {
     acs_sc::impl::delete \
         -contract_name "portal_datasource" \
@@ -562,7 +630,7 @@ ad_proc -private evaluation_admin_portlet::unregister_implementations {} {
 ad_proc -private evaluation_evaluations_portlet::get_package_id_from_key {
     {-package_key:required}
 } {
-    Gets the package_id of the evaluation instance related to the evaluation portlet for this community.
+    Gets the package_id of the evaluation instance related to the evaluation portlet for this community
 } {
     set community_id [dotlrn_community::get_community_id]
     set package_id  [db_string get_package_id {} -default 0]
